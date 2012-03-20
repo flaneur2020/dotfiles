@@ -6,9 +6,6 @@ task :link do
 end
 
 namespace :bs do
-  task :all do
-  end
-
   task :vim => :ubuntu do
     sh 'git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; true'
     sh 'vim +BundleInstall +qall'
