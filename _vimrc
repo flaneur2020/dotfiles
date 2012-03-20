@@ -1,6 +1,7 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
+source ~/.vim_bundle
 behave mswin
 
 syntax on 
@@ -67,7 +68,6 @@ au BufNewFile,BufRead *.sass set ft=sass
 au BufNewFile,BufRead *.coffee set ft=coffee 
 au BufNewFile,BufRead *.md set ft=markdown 
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
-
 
 " tabwidth
 autocmd filetype * set shiftwidth=4

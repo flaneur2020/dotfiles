@@ -1,6 +1,7 @@
 [user]
     name = fleuria
     email = me.ssword@gmail.com
+
 [color]
     branch = auto
     status = auto
