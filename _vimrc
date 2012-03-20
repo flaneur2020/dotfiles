@@ -29,7 +29,7 @@ set ruler
 set tags=./tags,./../tags,./../../tags
 
 " ^c^V i don't know how these about
-" set laststatus=2
+set laststatus=2
 set lbr
 set fo+=mB 
 set showmatch
@@ -119,7 +119,6 @@ let g:nerdtree_tabs_autoclose=1
 let g:nerdtree_tabs_synchronize_view=0
 let g:nerdtree_tabs_focus_on_files=1
 
-
 " Vimwiki
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_camel_case = 0
@@ -137,6 +136,10 @@ let g:fuf_previewHeight=0
 
 " Command-T
 let g:CommandTMatchWindowAtTop=1
+nnoremap <silent> <Leader>t :CommandTBuffer<CR>
 
 " for a.vim
 noremap <Leader>a :A<cr>
+
+let g:Powerline_dividers_override = ['>>', '>', '<<', '<']
+let g:Powerline_stl_path_style = 'full'

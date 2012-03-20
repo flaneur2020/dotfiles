@@ -5,7 +5,7 @@ task :link do
   end
 end
 
-namespace :bootstrap do
+namespace :bs do
   task :all do
   end
 

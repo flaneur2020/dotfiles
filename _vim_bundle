@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails.git'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
