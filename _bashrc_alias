@@ -2,7 +2,6 @@ alias ack="ack-grep"
 alias be="bundle exec"
 alias bs="bundle show"
 
-# some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'

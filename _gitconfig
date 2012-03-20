@@ -6,6 +6,7 @@
     status = auto
     diff = auto
     ui = auto
+
 [alias]
     st = status
     ci = commit
@@ -14,5 +15,5 @@
     df = diff
     lg = log -p
     who = shortlog -s --
-    gr = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 

@@ -77,8 +77,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -92,6 +90,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_profile ]; then
+    . ~/.bash_profile
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -99,41 +101,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# personal scripts
-export PATH=$PATH:~/code/scripts
 
-# on git
-function parse_git_branch () {
-git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
-GREEN="\[\033[0;32m\]"
-NO_COLOUR="\[\033[0m\]"
-
-PS1="$GREEN\u$NO_COLOUR:\w$YELLOW\$(parse_git_branch)$NO_COLOUR\$ "
-
-# on ruby
-export PATH=$PATH:/var/lib/gems/1.8/bin:/home/ssword/.gem/ruby/1.8/bin:/usr/local/rvm/bin:/home/ssword
-
-alias sudo="sudo env PATH=$PATH"
-
-# Load RVM if it is installed,
-#  first try to load  user install
-#  then try to load root install, if user install is not there.
-if [ -s "$HOME/.rvm/scripts/rvm" ] ; then
-  . "$HOME/.rvm/scripts/rvm"
-elif [ -s "/usr/local/rvm/scripts/rvm" ] ; then
-  . "/usr/local/rvm/scripts/rvm"
-fi
-
-# -----------------------------------------------------------------------------
-
-rvm use 1.9.2-p290
-
-# for mtr
-export MTR_OPTIONS=-t
-
-# for bash complete notification
-complete -o filenames -F _root_command ~/notify.sh
