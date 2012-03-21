@@ -1,5 +1,5 @@
 # personal scripts
-export PATH=$PATH:~/code/scripts
+export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts
 
 # on git
 function parse_git_branch () {
