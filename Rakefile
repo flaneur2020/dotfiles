@@ -8,7 +8,8 @@ task :link do
 end
 
 task :push do
-  sh "git commit -am 'updated at #{DateTime.now}'"
+  sh "git commit -am 'updated at #{DateTime.now}'; true"
+  sh "git push origin master"
 end
 
 namespace :bs do
