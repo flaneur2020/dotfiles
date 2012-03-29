@@ -6,5 +6,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias pgrep='pgrep -l'
+alias ggrep='git grep -n'
 alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
 

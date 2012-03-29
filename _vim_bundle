@@ -10,8 +10,9 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-rails.git'
-" non github repos
+" github repos
 Bundle 'git://git.wincent.com/command-t.git'
-" ...
+Bundle 'git://github.com/veselosky/vim-rst.git'
 
+" ...
 filetype plugin indent on     " required! 

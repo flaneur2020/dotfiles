@@ -111,13 +111,11 @@ source $VIMRUNTIME/menu.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " NerdTree
-let g:nerdtree_tabs_open_on_gui_startup=0
-let g:nerdtree_tabs_open_on_console_startup=0
-let g:nerdtree_tabs_open_on_new_tab=0
-let g:nerdtree_tabs_meaningful_tab_names=1  
-let g:nerdtree_tabs_autoclose=1
-let g:nerdtree_tabs_synchronize_view=0
-let g:nerdtree_tabs_focus_on_files=1
+let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
+let NERDTreeSortOrder=['^__\.py$', '\.h$', '\.c$', '\/$', '*', '\.swp$', '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeHightlightCursorline=1
+let NERDTreeDirArrows=0
 
 " Vimwiki
 let g:vimwiki_use_mouse = 1

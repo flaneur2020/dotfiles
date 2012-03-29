@@ -1,3 +1,5 @@
+require 'date'
+
 task :link do
   Dir['_*'].each do |fn|
     dot_fn = fn.gsub(/^_/, '~/.')
@@ -5,8 +7,12 @@ task :link do
   end
 end
 
+task :push do
+  sh "git commit -am 'updated at #{DateTime.now}'"
+end
+
 namespace :bs do
-  task :vim => :ubuntu do
+  task :vim do
     sh 'git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; true'
     sh 'vim +BundleInstall +qall'
   end
@@ -23,7 +29,7 @@ namespace :bs do
     sh "sudo apt-get install #{tools * ' '}"
   end
 
-  task :ruby => :ubuntu do
+  task :ruby do
     sh "curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer > /tmp/rvm-installer"
     sh "bash /tmp/rvm-installer"
     sh "rvm reload"
