@@ -8,7 +8,7 @@ task :link do
 end
 
 task :push do
-  sh "git commit -am 'updated at #{DateTime.now}'; true"
+  sh "git commit -am ':trollface: updated at #{DateTime.now}'; true"
   sh "git push origin master"
 end
 
