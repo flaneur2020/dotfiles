@@ -112,7 +112,7 @@ source $VIMRUNTIME/menu.vim
 
 " NerdTree
 let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
-let NERDTreeSortOrder=['^__\.py$', '\.h$', '\.c$', '\/$', '*', '\.swp$', '\~$']
+let NERDTreeSortOrder=['\/$', '\.h$', '\.c$', '\.py$', '\.rb$', '*', '^test_', '\.swp$', '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeHightlightCursorline=1
 let NERDTreeDirArrows=0
@@ -139,5 +139,6 @@ nnoremap <silent> <Leader>t :CommandTBuffer<CR>
 " for a.vim
 noremap <Leader>a :A<cr>
 
-let g:Powerline_dividers_override = ['>>', '>', '<<', '<']
-let g:Powerline_stl_path_style = 'full'
+" for ack.vim
+let g:ackprg="ack-grep -H --column"
+
