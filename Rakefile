@@ -1,9 +1,13 @@
-require 'date'
+require 'pry'
+require 'pp'
 
 task :link do
-  Dir['_*'].each do |fn|
-    dot_fn = fn.gsub(/^_/, '~/.')
-    sh "ln -f #{fn} #{dot_fn}"
+  # link the dot files and the files which under dot directories
+  Dir['{_*/**/*,_*}'].each do |fn|
+    next if File.directory? fn
+    dot_fn = fn.gsub(/(?:^_|\/_)/, '/.')
+    sh "mkdir -p ~/#{File.dirname(fn)}"
+    sh "ln -f #{fn} ~/#{dot_fn}"
   end
 end
 

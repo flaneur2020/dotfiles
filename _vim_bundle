@@ -10,6 +10,9 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-rails.git'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+
 " github repos
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/veselosky/vim-rst.git'

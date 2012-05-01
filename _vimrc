@@ -111,11 +111,11 @@ source $VIMRUNTIME/menu.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " NerdTree
-let NERDTreeIgnore=['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
-let NERDTreeSortOrder=['\/$', '\.h$', '\.c$', '\.py$', '\.rb$', '*', '^test_', '\.swp$', '\~$']
-let NERDTreeShowBookmarks=1
-let NERDTreeHightlightCursorline=1
-let NERDTreeDirArrows=0
+let NERDTreeIgnore = ['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
+let NERDTreeSortOrder = ['\/$', '\.py$', '\.rb$', '*', '^test_', '\.swp$', '\~$']
+let NERDTreeShowBookmarks = 1
+let NERDTreeHightlightCursorline = 1
+let NERDTreeDirArrows = 0
 
 " Vimwiki
 let g:vimwiki_use_mouse = 1
