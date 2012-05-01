@@ -1,5 +1,4 @@
-require 'pry'
-require 'pp'
+require 'date'
 
 task :link do
   # link the dot files and the files which under dot directories
