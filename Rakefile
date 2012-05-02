@@ -4,8 +4,8 @@ task :link do
   # link the dot files and the files which under dot directories
   Dir['{_*/**/*,_*}'].each do |fn|
     next if File.directory? fn
-    dot_fn = fn.gsub(/(?:^_|\/_)/, '/.')
-    sh "mkdir -p ~/#{File.dirname(fn)}"
+    dot_fn = fn.gsub(/(^_|\/_)/, '/.')
+    sh "mkdir -p ~/#{File.dirname(dot_fn)}"
     sh "ln -f #{fn} ~/#{dot_fn}"
   end
 end
@@ -23,7 +23,7 @@ namespace :bs do
 
   task :ubuntu do
     tools = %w{ 
-      vim-gnome chromium-browser
+      vim-gnome chromium-browser firefox putty-tools
       build-essential openssl libreadline6 libreadline6-dev 
       curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev 
       libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev 
