@@ -74,6 +74,8 @@ autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set tabstop=2
+autocmd filetype markdown set wrap
+autocmd filetype c,cpp color evening
 
 color slate
 
@@ -112,7 +114,7 @@ source $VIMRUNTIME/menu.vim
 
 " NerdTree
 let NERDTreeIgnore = ['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
-let NERDTreeSortOrder = ['\/$', '\.py$', '\.rb$', '*', '^test_', '\.swp$', '\~$']
+let NERDTreeSortOrder = ['\/$', '\.py$', '\.rb$', '\.md$', '\.html$', '*', '^test_', '\.swp$', '\~$']
 let NERDTreeShowBookmarks = 1
 let NERDTreeHightlightCursorline = 1
 let NERDTreeDirArrows = 0

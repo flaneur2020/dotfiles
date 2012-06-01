@@ -1,13 +1,21 @@
+require 'pp'
+require 'yaml'
 require 'date'
 
 task :link do
   # link the dot files and the files which under dot directories
-  Dir['{_*/**/*,_*}'].each do |fn|
+  Dir['_*'].each do |fn|
     next if File.directory? fn
-    dot_fn = fn.gsub(/(^_|\/_)/, '/.')
-    sh "mkdir -p ~/#{File.dirname(dot_fn)}"
+    dot_fn = fn.gsub(/^_/, '.')
     sh "ln -f #{fn} ~/#{dot_fn}"
   end
+  # link the misc files, according to the map.yml file
+  map_fn = 'misc/map.yml'
+  YAML::load_file(map_fn).each do |fn, target|
+    sh "ln -f misc/#{fn} #{target}"
+  end
+  # 
+  sh "ln -nfs #{File.dirname(__FILE__)} ~/.dotfiles"
 end
 
 task :push do

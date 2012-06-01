@@ -10,6 +10,7 @@
 
 [alias]
     st = status
+    stt = !"tig status"
     ci = commit
     br = branch
     co = checkout
@@ -17,4 +18,3 @@
     lg = log -p
     who = shortlog -s --
     lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-

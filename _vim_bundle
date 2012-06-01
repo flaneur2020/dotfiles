@@ -18,6 +18,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/veselosky/vim-rst.git'
 Bundle 'git://github.com/mileszs/ack.vim.git'
 Bundle 'git://github.com/vim-scripts/a.vim.git'
+Bundle 'https://github.com/tpope/vim-markdown.git'
 
 " ...
 filetype plugin indent on     " required! 

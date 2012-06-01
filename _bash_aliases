@@ -1,10 +1,13 @@
 alias ack="ack-grep"
 alias be="bundle exec"
 alias bs="bundle show"
+alias vundle="vim +BundleInstall +qall"
 
 alias ll='ls -alF'
 alias la='ls -A'
+alias df='df -h'
 alias l='ls -CF'
+alias open='gnome-open'
 alias pgrep='pgrep -l'
 alias ggrep='git grep -n'
 alias untar='tar -zxvf'
