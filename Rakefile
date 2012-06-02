@@ -12,6 +12,7 @@ task :link do
   # link the misc files, according to the map.yml file
   map_fn = 'misc/map.yml'
   YAML::load_file(map_fn).each do |fn, target|
+    sh "mkdir -p #{File.dirname(target)}"
     sh "ln -f misc/#{fn} #{target}"
   end
   # 
