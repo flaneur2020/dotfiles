@@ -25,7 +25,12 @@ elif [ -s "/usr/local/rvm/scripts/rvm" ] ; then
   . "/usr/local/rvm/scripts/rvm"
 fi
 
-rvm use 1.9.2-p290
+# for pythonbrew
+alias pyvm="pythonbrew"
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+
+rvm use 1.9.3
+pyvm use 3.2
 
 # for mtr
 export MTR_OPTIONS=-t

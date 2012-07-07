@@ -3,6 +3,8 @@ alias be="bundle exec"
 alias bs="bundle show"
 alias vundle="vim +BundleInstall +qall"
 
+alias ipy='ipython3'
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias df='df -h'

@@ -58,6 +58,8 @@ autocmd BufEnter * lcd %:p:h
 set nobackup
 set nowritebackup
 
+color slate
+
 " toolbar sucks
 set guioptions=ir
 
@@ -69,15 +71,12 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 au BufNewFile,BufRead *.md set ft=markdown 
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
 
-" tabwidth
 autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set tabstop=2
 autocmd filetype markdown set wrap
 autocmd filetype c,cpp color evening
-
-color slate
 
 " key bindings
 noremap <c-Right> :tabn<cr>

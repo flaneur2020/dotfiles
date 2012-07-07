@@ -2,6 +2,8 @@ require 'pp'
 require 'yaml'
 require 'date'
 
+task :default => :link
+
 task :link do
   # link the dot files and the files which under dot directories
   Dir['_*'].each do |fn|
@@ -49,5 +51,11 @@ namespace :bs do
     sh "rvm install 1.9.2"
     sh "rvm use 1.9.2"
     sh "gem install bundler"
+  end
+
+  task :py do
+    sh "curl -kL http://xrl.us/pythonbrewinstall | bash"
+    sh "pyvm install 3.2"
+    sh "pyvm use 3.2"
   end
 end
