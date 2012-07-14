@@ -55,6 +55,7 @@ set showtabline=2
 " set autochdir
 autocmd BufEnter * lcd %:p:h
 
+set noswapfile
 set nobackup
 set nowritebackup
 
@@ -69,14 +70,16 @@ au BufNewFile,BufRead *.scss set ft=scss
 au BufNewFile,BufRead *.sass set ft=sass 
 au BufNewFile,BufRead *.coffee set ft=coffee 
 au BufNewFile,BufRead *.md set ft=markdown 
+au BufNewFile,BufRead *vim_bundle set ft=vim 
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
+
 
 autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set tabstop=2
 autocmd filetype markdown set wrap
-autocmd filetype c,cpp color evening
+" autocmd filetype c,cpp color evening
 
 " key bindings
 noremap <c-Right> :tabn<cr>
@@ -113,7 +116,7 @@ source $VIMRUNTIME/menu.vim
 
 " NerdTree
 let NERDTreeIgnore = ['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
-let NERDTreeSortOrder = ['\/$', '\.py$', '\.rb$', '\.md$', '\.html$', '*', '^test_', '\.swp$', '\~$']
+let NERDTreeSortOrder = ['Makefile', '\/$', '\.py$', '\.rb$', '\.md$', '\.html$', '*', '^test_', '\.swp$', '\~$']
 let NERDTreeShowBookmarks = 1
 let NERDTreeHightlightCursorline = 1
 let NERDTreeDirArrows = 0
@@ -139,6 +142,9 @@ nnoremap <silent> <Leader>t :CommandTBuffer<CR>
 
 " for a.vim
 noremap <Leader>a :A<cr>
+
+" for taglist
+noremap <Leader>s :Tlist<cr>
 
 " for ack.vim
 let g:ackprg="ack-grep -H --column"

@@ -14,11 +14,13 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 
 " github repos
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'git://github.com/veselosky/vim-rst.git'
-Bundle 'git://github.com/mileszs/ack.vim.git'
 Bundle 'git://github.com/vim-scripts/a.vim.git'
-Bundle 'https://github.com/tpope/vim-markdown.git'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'git://github.com/mileszs/ack.vim.git'
+Bundle 'git://github.com/veselosky/vim-rst.git'
+Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'git://github.com/vim-scripts/taglist.vim.git'
+Bundle 'git://github.com/vim-scripts/Rename.git'
 
 " ...
 filetype plugin indent on     " required! 

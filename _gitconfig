@@ -8,6 +8,9 @@
     diff = auto
     ui = auto
 
+[core]
+    excludesfile = ~/.gitignore
+
 [alias]
     st = status
     stt = !"tig status"
@@ -15,6 +18,7 @@
     br = branch
     co = checkout
     df = diff
+    ls = !"git ls-tree -r master | cut -f2"
     lg = log -p
     who = shortlog -s --
     lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative

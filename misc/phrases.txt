@@ -1,6 +1,7 @@
 qb=●ω●
+qb= ✪ω✪
 tanshou=╮(￣▽￣)╭
-tanshou=╮(￣▽￣")╭
+tanshou=╮(￣﹏￣)╭
 huishou=( ´ ▽ ` )ﾉ
 huankuai=ヾ(*´∇`)ﾉ
 ding=→_→
@@ -12,4 +13,5 @@ zhexuejia=哲♂学家
 leiben=\(//▽//)\
 xianzhuo=（╯￣▽￣）╯╧╧ 
 xingxingyan=✪ω✪
+
 

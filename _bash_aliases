@@ -1,8 +1,12 @@
-alias ack="ack-grep"
+alias bundle='n bundle'
+alias vundle="n vim +BundleInstall +qall"
+alias gem="n gem"
+alias wget="n wget"
+
 alias be="bundle exec"
 alias bs="bundle show"
-alias vundle="vim +BundleInstall +qall"
 
+alias ack="ack-grep"
 alias ipy='ipython3'
 
 alias ll='ls -alF'
@@ -15,3 +19,6 @@ alias ggrep='git grep -n'
 alias untar='tar -zxvf'
 alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
 
+alias t='time'
+alias pyprof='python -m cProfile'
+alias rbprof='ruby-prof'

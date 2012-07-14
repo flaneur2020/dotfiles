@@ -2,23 +2,28 @@ require 'pp'
 require 'yaml'
 require 'date'
 
-task :default => :link
+task :default => [:link, :chmod]
 
 task :link do
+  pwd = File.dirname(__FILE__)
   # link the dot files and the files which under dot directories
   Dir['_*'].each do |fn|
     next if File.directory? fn
     dot_fn = fn.gsub(/^_/, '.')
-    sh "ln -f #{fn} ~/#{dot_fn}"
+    sh "ln -nfs #{pwd}/#{fn} ~/#{dot_fn}"
   end
   # link the misc files, according to the map.yml file
   map_fn = 'misc/map.yml'
   YAML::load_file(map_fn).each do |fn, target|
     sh "mkdir -p #{File.dirname(target)}"
-    sh "ln -f misc/#{fn} #{target}"
+    sh "ln -nfs #{pwd}/misc/#{fn} #{target}"
   end
   # 
-  sh "ln -nfs #{File.dirname(__FILE__)} ~/.dotfiles"
+  sh "ln -nfs #{pwd} ~/.dotfiles"
+end
+
+task :chmod => :link do
+  sh "chmod 755 ~/.dotfiles/scripts/*"
 end
 
 task :push do
