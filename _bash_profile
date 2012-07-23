@@ -1,5 +1,5 @@
-# personal scripts
 export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 alias sudo="sudo env PATH=$PATH"
 
