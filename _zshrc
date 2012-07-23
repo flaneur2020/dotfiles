@@ -1,0 +1,62 @@
+# Set up the prompt
+
+autoload -Uz promptinit
+promptinit
+prompt walters
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' menu select=2
+eval "$(dircolors -b)"
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+# get the colors
+autoload colors zsh/terminfo
+if [[ "$terminfo[colors]" -ge 8 ]]; then
+   colors
+fi
+for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE GREY; do
+   eval COLOR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
+   eval COLOR_$color='%{$fg[${(L)color}]%}'
+done
+COLOR_OFF="%{$terminfo[sgr0]%}"
+
+# on promt
+git_prompt_info() { 
+    git branch | awk '/^\*/ { print $2 }'
+}
+get_git_dirty() { 
+    git diff --quiet || echo '*'
+}
+
+setopt prompt_subst
+
+PROMPT="%{$fg[green]%}%n%{$reset_color%}:%{$fg[white]%}%4~ (%{$fg[yellow]%}$(git_prompt_info)$(get_git_dirty)%{$fg[white]%}) $ "
+RPROMPT='%{$fg[white]%}%1(j.%j.)'
+
+source ~/.bash_profile
+source ~/.bash_aliases

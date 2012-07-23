@@ -9,6 +9,7 @@ alias bs="bundle show"
 alias ack="ack-grep"
 alias ipy='ipython3'
 
+alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias df='df -h'
