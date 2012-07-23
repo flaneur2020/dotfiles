@@ -40,7 +40,7 @@ namespace :bs do
   task :ubuntu do
     tools = %w{ 
       vim-gnome chromium-browser firefox putty-tools
-      ctags ubuntu-restricted-extras
+      ctags libnotify-bin ubuntu-restricted-extras
       build-essential openssl libreadline6 libreadline6-dev 
       curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev 
       libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev 
