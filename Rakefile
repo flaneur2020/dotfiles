@@ -40,6 +40,7 @@ namespace :bs do
   task :ubuntu do
     tools = %w{ 
       vim-gnome chromium-browser firefox putty-tools
+      ctags ubuntu-restricted-extras
       build-essential openssl libreadline6 libreadline6-dev 
       curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev 
       libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev 
@@ -53,8 +54,8 @@ namespace :bs do
     sh "curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer > /tmp/rvm-installer"
     sh "bash /tmp/rvm-installer"
     sh "rvm reload"
-    sh "rvm install 1.9.2"
-    sh "rvm use 1.9.2"
+    sh "rvm install 1.9.3"
+    sh "rvm use 1.9.3"
     sh "gem install bundler"
   end
 

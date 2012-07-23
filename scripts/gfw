@@ -1,0 +1,4 @@
+#!/bin/sh
+
+plink -N -v fleuria@icybear.net -D 127.0.0.1:7070
+
