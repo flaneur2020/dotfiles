@@ -39,23 +39,15 @@ autoload colors zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
    colors
 fi
-for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE GREY; do
-   eval COLOR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
-   eval COLOR_$color='%{$fg[${(L)color}]%}'
-done
-COLOR_OFF="%{$terminfo[sgr0]%}"
 
 # on promt
 git_prompt_info() { 
-    git branch | awk '/^\*/ { print $2 }'
-}
-get_git_dirty() { 
-    git diff --quiet || echo '*'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 setopt prompt_subst
 
-PROMPT="%{$fg[green]%}%n%{$reset_color%}:%{$fg[white]%}%4~ (%{$fg[yellow]%}$(git_prompt_info)$(get_git_dirty)%{$fg[white]%}) $ "
+PROMPT='%{$fg[green]%}%n%{$reset_color%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$fg[white]%} $ '
 RPROMPT='%{$fg[white]%}%1(j.%j.)'
 
 source ~/.bash_profile
