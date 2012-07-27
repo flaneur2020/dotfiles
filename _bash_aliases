@@ -27,5 +27,4 @@ alias t='time'
 alias pyprof='python -m cProfile'
 alias rbprof='ruby-prof'
 
-alias .='echo $PWD'
 alias ..='cd ..'
