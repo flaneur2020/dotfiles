@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts
+export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts:$HOME/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 alias sudo="sudo env PATH=$PATH"
@@ -17,7 +17,8 @@ alias pyvm="pythonbrew"
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 rvm use 1.9.3
-pyvm use 3.2
+pyvm use 2.7.3
 
 # for mtr
 export MTR_OPTIONS=-t
+

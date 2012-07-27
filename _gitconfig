@@ -21,4 +21,4 @@
     ls = !"git ls-tree -r master | cut -f2"
     lg = log -p
     who = shortlog -s --
-    lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue) %an %Creset' --abbrev-commit --date=relative

@@ -6,8 +6,11 @@ alias wget="n wget"
 alias be="bundle exec"
 alias bs="bundle show"
 
+alias de="dae venv"
+
 alias ack="ack-grep"
 alias ipy='ipython3'
+alias py='python'
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
@@ -23,3 +26,6 @@ alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..
 alias t='time'
 alias pyprof='python -m cProfile'
 alias rbprof='ruby-prof'
+
+alias .='echo $PWD'
+alias ..='cd ..'
