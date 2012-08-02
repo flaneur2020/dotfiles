@@ -21,4 +21,8 @@ pyvm use 2.7.3
 
 # for mtr
 export MTR_OPTIONS=-t
+# for skype
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 

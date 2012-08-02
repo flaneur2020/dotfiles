@@ -59,7 +59,7 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-color slate
+color molokai
 
 " toolbar sucks
 set guioptions=ir

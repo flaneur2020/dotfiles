@@ -22,6 +22,7 @@ Bundle 'git://github.com/tpope/vim-markdown.git'
 Bundle 'git://github.com/vim-scripts/taglist.vim.git'
 Bundle 'git://github.com/vim-scripts/Rename.git'
 Bundle 'git://github.com/jnwhiteh/vim-golang.git'
+Bundle 'git://github.com/vim-scripts/molokai.git'
 
 " ...
 filetype plugin indent on     " required! 

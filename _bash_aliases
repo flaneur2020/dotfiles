@@ -7,11 +7,13 @@ alias be="bundle exec"
 alias bs="bundle show"
 
 alias de="dae venv"
+alias dj="./manage.py"
 
 alias ack="ack-grep"
 alias ipy='ipython3'
 alias py='python'
 
+alias pkill='killall'
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
