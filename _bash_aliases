@@ -7,7 +7,6 @@ alias be="bundle exec"
 alias bs="bundle show"
 
 alias de="dae venv"
-alias dj="./manage.py"
 
 alias ack="ack-grep"
 alias ipy='ipython3'

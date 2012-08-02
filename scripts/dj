@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+while not File.exists?('manage.py')
+  Dir.chdir '..'
+  exit if Dir.pwd == '/'
+end
+
+system 'python manage.py'
