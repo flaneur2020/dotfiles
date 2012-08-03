@@ -13,8 +13,9 @@ elif [ -s "/usr/local/rvm/scripts/rvm" ] ; then
 fi
 
 # for pythonbrew
-alias pyvm="pythonbrew"
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 
 rvm use 1.9.3
 pyvm use 2.7.3

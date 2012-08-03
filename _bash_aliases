@@ -13,6 +13,7 @@ alias djs="dj runserver"
 alias djm="dj schemamigration --auto"
 alias ipy='ipython3'
 alias py='python'
+alias pyvm="pythonbrew"
 
 alias ack="ack-grep"
 alias pkill='killall'
