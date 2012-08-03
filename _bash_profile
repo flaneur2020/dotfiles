@@ -18,7 +18,7 @@ fi
 
 
 rvm use 1.9.3
-pyvm use 2.7.3
+pythonbrew use 2.7.3
 
 # for mtr
 export MTR_OPTIONS=-t
