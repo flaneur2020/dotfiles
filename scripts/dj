@@ -7,4 +7,4 @@ while not File.exists?('manage.py')
   exit if Dir.pwd == '/'
 end
 
-system 'python manage.py'
+system "python manage.py #{ARGV * ' '}"

@@ -72,7 +72,7 @@ au BufNewFile,BufRead *.coffee set ft=coffee
 au BufNewFile,BufRead *.md set ft=markdown 
 au BufNewFile,BufRead *vim_bundle set ft=vim 
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
-
+au BufNewFile,BufRead .bash_aliases set ft=sh 
 
 autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4

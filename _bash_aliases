@@ -6,12 +6,15 @@ alias wget="n wget"
 alias be="bundle exec"
 alias bs="bundle show"
 
+# for python
 alias de="dae venv"
-
-alias ack="ack-grep"
+alias dja="django-admin.py"
+alias djs="dj runserver"
+alias djm="dj schemamigration --auto"
 alias ipy='ipython3'
 alias py='python'
 
+alias ack="ack-grep"
 alias pkill='killall'
 alias ls='ls --color=auto'
 alias ll='ls -alF'
