@@ -8,7 +8,6 @@ task :link do
   pwd = File.dirname(__FILE__)
   # link the dot files and the files which under dot directories
   Dir['_*'].each do |fn|
-    next if File.directory? fn
     dot_fn = fn.gsub(/^_/, '.')
     sh "ln -nfs #{pwd}/#{fn} ~/#{dot_fn}"
   end
