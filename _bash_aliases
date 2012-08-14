@@ -1,10 +1,8 @@
-alias bundle='n bundle'
-alias vundle="n vim +BundleInstall +qall"
-alias gem="n gem"
-alias wget="n wget"
 
 alias be="bundle exec"
 alias bs="bundle show"
+alias gem="n gem"
+alias vundle="n vim +BundleInstall +qall"
 
 # for python
 alias de="dae venv"
@@ -15,6 +13,11 @@ alias ipy='ipython3'
 alias py='python'
 alias pyvm="pythonbrew"
 
+# for mysql
+alias myschema='mysqldump -d'
+
+# for utils
+alias wget="n wget"
 alias ack="ack-grep"
 alias pkill='killall'
 alias ls='ls --color=auto'

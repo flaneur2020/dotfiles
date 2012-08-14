@@ -19,6 +19,7 @@
     co = checkout
     df = diff --cached
     ls = !"git ls-tree -r master | cut -f2"
+    mg = merge --no-ff
     lg = log -p
     who = shortlog -s --
     lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue) %an %Creset' --abbrev-commit --date=relative

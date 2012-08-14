@@ -76,8 +76,8 @@ au BufNewFile,BufRead .bash_aliases set ft=sh
 
 autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
-autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
-autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop set tabstop=2
+autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop,htmldjango set shiftwidth=2
+autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop,htmldjango set tabstop=2
 autocmd filetype markdown set wrap
 " autocmd filetype c,cpp color evening
 
