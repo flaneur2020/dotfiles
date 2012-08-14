@@ -16,6 +16,7 @@
     stt = !"tig status"
     ci = commit
     br = branch
+    c = commit -m
     co = checkout
     df = diff --cached
     ls = !"git ls-tree -r master | cut -f2"

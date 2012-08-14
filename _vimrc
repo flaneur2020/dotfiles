@@ -1,7 +1,7 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
-source ~/.vim_bundle
+source ~/.vundle
 behave mswin
 
 syntax on 
@@ -70,7 +70,7 @@ au BufNewFile,BufRead *.scss set ft=scss
 au BufNewFile,BufRead *.sass set ft=sass 
 au BufNewFile,BufRead *.coffee set ft=coffee 
 au BufNewFile,BufRead *.md set ft=markdown 
-au BufNewFile,BufRead *vim_bundle set ft=vim 
+au BufNewFile,BufRead *.vundle set ft=vim 
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
 au BufNewFile,BufRead .bash_aliases set ft=sh 
 
