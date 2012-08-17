@@ -97,6 +97,8 @@ inoremap <PageDown> <esc>gja
 noremap <C-Up> <C-W>k<C-W>_
 noremap <C-Down> <C-W>j<C-W>_
 
+noremap <C-\> :vs<cr>
+
 " v
 noremap <UP> gk
 noremap <Down> gj
