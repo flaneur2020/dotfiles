@@ -70,7 +70,7 @@ au BufNewFile,BufRead *.scss set ft=scss
 au BufNewFile,BufRead *.sass set ft=sass 
 au BufNewFile,BufRead *.coffee set ft=coffee 
 au BufNewFile,BufRead *.md set ft=markdown 
-au BufNewFile,BufRead *.vundle set ft=vim 
+au BufNewFile,BufRead *vundle set ft=vim 
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
 au BufNewFile,BufRead .bash_aliases set ft=sh 
 
@@ -84,6 +84,8 @@ autocmd filetype markdown set wrap
 " key bindings
 noremap <c-Right> :tabn<cr>
 noremap <c-left>  :tabp<cr>
+
+noremap <C-\> :vs<cr>
 
 " pageup & down is annoying
 noremap <PageUp> gk
