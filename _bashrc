@@ -115,9 +115,14 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # set bash title into the current command
-# PS1="\033]0;\w\007${PS1}"
 trap 'echo -ne "\033]0;$BASH_COMMAND\007" > /dev/stderr' DEBUG
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+settitle () {
+   echo -e "\\033]2;$PWD\\007\\c"
+}
 
+PROMPT_COMMAND=settitle
+export PROMPT_COMMAND
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
