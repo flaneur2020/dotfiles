@@ -4,13 +4,13 @@ source $VIMRUNTIME/mswin.vim
 source ~/.vundle
 behave mswin
 
-syntax on 
+syntax on
 filetype plugin on
 
 "about tab
 set autoindent
 set smartindent
-set smarttab 					
+set smarttab
 set expandtab
 
 " encoding . utf-8 rules!
@@ -31,20 +31,20 @@ set tags=./tags,./../tags,./../../tags
 " ^c^V i don't know how these about
 set laststatus=2
 set lbr
-set fo+=mB 
+set fo+=mB
 set showmatch
 set cin
 set cino=g0:0t0(sus
 set guifont=WenQuanYi\ Micro\ Hei\ Mono
 set hls
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 set noswapfile
 set shiftround
-" set whichwrap=b,s,<,>,[,] 
+" set whichwrap=b,s,<,>,[,]
 set bsdir=buffer
 set smartcase
 
-set nowrap 
+set nowrap
 set autoread
 set autowrite
 
@@ -65,21 +65,31 @@ color molokai
 set guioptions=ir
 
 au BufNewFile,BufRead *.tt,*.treetop setf treetop
-au BufNewFile,BufRead *.slim set ft=slim 
-au BufNewFile,BufRead *.scss set ft=scss 
-au BufNewFile,BufRead *.sass set ft=sass 
-au BufNewFile,BufRead *.coffee set ft=coffee 
-au BufNewFile,BufRead *.md set ft=markdown 
-au BufNewFile,BufRead *vundle set ft=vim 
-au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby 
-au BufNewFile,BufRead .bash_aliases set ft=sh 
+au BufNewFile,BufRead *.slim set ft=slim
+au BufNewFile,BufRead *.scss set ft=scss
+au BufNewFile,BufRead *.sass set ft=sass
+au BufNewFile,BufRead *.coffee set ft=coffee
+au BufNewFile,BufRead *.md set ft=markdown
+au BufNewFile,BufRead *vundle set ft=vim
+au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby
+au BufNewFile,BufRead .bash_aliases set ft=sh
 
 autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop,htmldjango set shiftwidth=2
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop,htmldjango set tabstop=2
 autocmd filetype markdown set wrap
-" autocmd filetype c,cpp color evening
+
+fun! DelBlank()
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  :%s/^\s\+$//e
+  let @/=_s
+  call cursor(l, c)
+endfun
+
+au BufWritePre *.* :call DelBlank()
 
 " key bindings
 noremap <c-Right> :tabn<cr>
@@ -138,7 +148,7 @@ let g:vimwiki_list = [{'path': '~/code/wiki/vimwiki/src/',
 " minibufexplorer
 
 " FuzzyFinder
-let g:fuf_previewHeight=0 
+let g:fuf_previewHeight=0
 
 " Command-T
 let g:CommandTMatchWindowAtTop=1
