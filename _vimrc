@@ -118,6 +118,8 @@ noremap <ESC> v<ESC>
 
 inoremap <C-Backspace> <C-w>
 
+noremap q :w<cr>
+
 cnoreabbrev qt tabc
 
 "
