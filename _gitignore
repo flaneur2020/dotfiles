@@ -3,3 +3,4 @@ tags
 *.pyc
 *.so
 *.o
+.ctrlp

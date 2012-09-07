@@ -24,7 +24,7 @@ set encoding=utf-8
 " misc
 set nu
 set wildmenu
-set wildignore+=*.o,*.obj,.git
+set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*
 set ruler
 set tags=./tags,./../tags,./../../tags
 
@@ -149,12 +149,14 @@ let g:vimwiki_list = [{'path': '~/code/wiki/vimwiki/src/',
 
 " minibufexplorer
 
-" FuzzyFinder
-let g:fuf_previewHeight=0
+" CtrlP
+let g:ctrlp_root_markers = ['.ctrlp', '.git']
+let g:ctrlp_custom_ignore = { 
+            \ 'dir': '/venv/', 
+            \ 'file': '\.exe$\|\.so$' 
+            \ }
 
-" Command-T
-let g:CommandTMatchWindowAtTop=1
-nnoremap <silent> <Leader>t :CommandTBuffer<CR>
+nnoremap <silent> <Leader>t :CtrlP<CR>
 
 " for a.vim
 noremap <Leader>a :A<cr>

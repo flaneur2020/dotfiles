@@ -1,1 +1,4 @@
 --type-add=ruby=.haml,.rake,.rsel,.slim,.sass,.scss,.coffee
+--type-set=minjs=.min.js
+--nominjs
+
