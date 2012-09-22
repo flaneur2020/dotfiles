@@ -20,7 +20,7 @@ alias myschema='mysqldump -d'
 alias wget="n wget"
 alias ack="ack-grep"
 alias pkill='killall'
-alias ls='ls --color=auto --ignore=*.pyc -X --group-directories-first'
+alias ls='ls --color=auto -X --group-directories-first'
 alias ll='ls -alF'
 alias la='ls -A'
 alias df='df -hT'

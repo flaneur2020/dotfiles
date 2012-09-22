@@ -12,14 +12,12 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-setopt correctall
-
 # Use modern completion system
 autoload -Uz compinit
 compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' completer _expand _complete 
 zstyle ':completion:*' format ''
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
@@ -35,6 +33,13 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+# make it bash-like
+setopt +o menucomplete
+autoload -U compinstall
+setopt no_auto_menu
+setopt AUTO_LIST
+setopt list_packed
 
 # Set up the prompt
 autoload -Uz promptinit
