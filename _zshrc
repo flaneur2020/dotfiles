@@ -1,3 +1,6 @@
+# manually includes oh-my-zsh libs only
+[[ -s "$HOME/.dotfiles/_zsh/git.zsh" ]] && source ~/.dotfiles/_zsh/git.zsh
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
@@ -17,7 +20,7 @@ autoload -Uz compinit
 compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete 
+zstyle ':completion:*' completer _complete 
 zstyle ':completion:*' format ''
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
@@ -53,12 +56,19 @@ if [[ "$terminfo[colors]" -ge 8 ]]; then
    colors
 fi
 
-# on git
-git_prompt_info() { 
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+PROMPT_SUCCESS_COLOR=$FG[117]
+PROMPT_FAILURE_COLOR=$FG[124]
+PROMPT_VCS_INFO_COLOR=$FG[242]
+PROMPT_PROMPT=$FG[077]
+GIT_DIRTY_COLOR=$FG[133]
+GIT_CLEAN_COLOR=$FG[118]
+GIT_PROMPT_INFO=$FG[012]
+ZSH_THEME_GIT_PROMPT_PREFIX="("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$GIT_PROMPT_INFO%})"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$GIT_DIRTY_COLOR%}✘"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='%{$fg[green]%}%n%{$reset_color%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$fg[white]%} $ '
+PROMPT='%{$fg[green]%}%n%{$reset_color%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$GIT_DIRTY_COLOR%}$(git_prompt_status)%{$reset_color%} $ '
 RPROMPT='%{$fg[white]%}%1(j.%j.)'
 
 source ~/.bash_profile
