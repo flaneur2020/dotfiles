@@ -30,6 +30,7 @@ alias pgrep='pgrep -l'
 alias ggrep='git grep -n'
 alias untar='tar -zxvf'
 alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
+alias so='source'
 
 alias t='time'
 alias pyprof='python -m cProfile'

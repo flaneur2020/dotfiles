@@ -78,6 +78,7 @@ autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop,htmldjango set shiftwidth=2
 autocmd filetype ruby,haml,erb,html,slim,yaml,scss,sass,coffee,treetop,htmldjango set tabstop=2
+autocmd filetype python set suffixesadd=
 autocmd filetype markdown set wrap
 
 fun! DelBlank()
