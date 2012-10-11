@@ -1,8 +1,8 @@
 
 alias be="bundle exec"
 alias bs="bundle show"
-alias gem="n gem"
-alias vundle="n vim +BundleInstall +qall"
+alias gem="gem"
+alias vundle="vim +BundleInstall +qall"
 
 # for python
 alias de="dae venv"

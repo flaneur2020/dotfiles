@@ -59,7 +59,12 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-color molokai
+
+if has('gui_running')
+    color molokai
+else
+    color morning
+endif
 
 " toolbar sucks
 set guioptions=ir
@@ -116,6 +121,11 @@ noremap <Down> gj
 noremap <LEFT> h
 noremap <Right> l
 noremap <ESC> v<ESC>
+" a workaround
+nnoremap <Esc>A <up>
+nnoremap <Esc>B <down>
+nnoremap <Esc>C <right>
+nnoremap <Esc>D <left>
 
 inoremap <C-Backspace> <C-w>
 
