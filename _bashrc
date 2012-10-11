@@ -89,10 +89,12 @@ function parse_git_branch () {
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
-NO_COLOUR="\[\033[0m\]"
+BLUE="\[\033[0;35m\]"
+GRAY="\[\033[0m\]"
+DARK="\[\033[30m\]"
 
 # show branch name on the prompt
-PS1="\n$GREEN\u$NO_COLOUR:\w$YELLOW\$(parse_git_branch)$NO_COLOUR\n\$ "
+PS1="\n$GREEN\u$DARK@$BLUE\h$GRAY:\w$YELLOW\$(parse_git_branch)$GRAY\n\$ "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

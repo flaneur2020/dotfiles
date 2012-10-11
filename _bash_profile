@@ -16,10 +16,6 @@ fi
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-
-rvm use 1.9.3
-pythonbrew use 2.7.3
-
 # for mtr
 export MTR_OPTIONS=-t
 # for skype
