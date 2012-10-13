@@ -8,12 +8,13 @@ bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
 
 autoload -U select-word-style
-select-word-style bash
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
+
+unsetopt correct_all  
 
 # Use modern completion system
 autoload -Uz compinit
