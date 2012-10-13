@@ -1,6 +1,6 @@
 # dotfiles
 
-The dotfiles and some bootstrap scripts for fleuria.
+The dotfiles and some bootstrap scripts for fleuria. rake is required.
 
 to link all the dotfiles:
 
@@ -12,11 +12,11 @@ to install the utilities:
     rake bs:ubuntu
 
 to setup ruby:
-    
+
     rake bs:ruby
 
 to setup vim:
-    
+
     rake bs:vim
 
 to keep sync with github:
