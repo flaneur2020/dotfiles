@@ -63,7 +63,7 @@ set nowritebackup
 if has('gui_running')
     color molokai
 else
-    color morning
+    color torte
 endif
 
 " toolbar sucks
