@@ -120,7 +120,6 @@ noremap <UP> gk
 noremap <Down> gj
 noremap <LEFT> h
 noremap <Right> l
-noremap <ESC> v<ESC>
 " a workaround
 nnoremap <Esc>A <up>
 nnoremap <Esc>B <down>
