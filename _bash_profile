@@ -12,9 +12,9 @@ elif [ -s "/usr/local/rvm/scripts/rvm" ] ; then
   . "/usr/local/rvm/scripts/rvm"
 fi
 
-# for pythonbrew
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 # for mtr
 export MTR_OPTIONS=-t
@@ -22,4 +22,7 @@ export MTR_OPTIONS=-t
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+# for tmuxinator
+export EDITOR=vim
+
 

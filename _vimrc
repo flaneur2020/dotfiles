@@ -63,7 +63,7 @@ set nowritebackup
 if has('gui_running')
     color molokai
 else
-    color morning
+    color torte
 endif
 
 " toolbar sucks
@@ -102,6 +102,7 @@ noremap <c-Right> :tabn<cr>
 noremap <c-left>  :tabp<cr>
 
 noremap <C-\> :vs<cr>
+noremap vv <C-Q>
 
 " pageup & down is annoying
 noremap <PageUp> gk
@@ -120,7 +121,6 @@ noremap <UP> gk
 noremap <Down> gj
 noremap <LEFT> h
 noremap <Right> l
-noremap <ESC> v<ESC>
 " a workaround
 nnoremap <Esc>A <up>
 nnoremap <Esc>B <down>
