@@ -102,6 +102,7 @@ noremap <c-Right> :tabn<cr>
 noremap <c-left>  :tabp<cr>
 
 noremap <C-\> :vs<cr>
+noremap vv <C-Q>
 
 " pageup & down is annoying
 noremap <PageUp> gk
