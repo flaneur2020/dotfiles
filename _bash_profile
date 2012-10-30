@@ -25,4 +25,3 @@ export QT_IM_MODULE=ibus
 # for tmuxinator
 export EDITOR=vim
 
-

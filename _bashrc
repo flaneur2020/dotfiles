@@ -101,13 +101,9 @@ PS1="\n$GREEN\u$DARK@$BLUE\h$GRAY:\w$YELLOW\$(parse_git_branch)$GRAY\n\$ "
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
+[[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
+[[ -s $HOME/.bash_profile ]] && source ~/.bash_profile
+[[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

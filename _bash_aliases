@@ -37,3 +37,6 @@ alias pyprof='python -m cProfile'
 alias rbprof='ruby-prof'
 
 alias ..='cd ..'
+
+alias vshireup='cd ~/code/shire-in-vagrant && vagrant up'
+alias vshire='sshfs vagrant@vagrant:/home/vagrant /home/ssword/vagrant nonempty; cd ~/vagrant'
