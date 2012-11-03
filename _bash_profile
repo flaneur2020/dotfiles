@@ -1,7 +1,14 @@
+export KERNEL=`uname -s`
+export MTR_OPTIONS=-t
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+export EDITOR=vim
+
 export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts:$HOME/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-alias sudo="sudo env PATH=$PATH"
+# alias sudo="sudo env PATH=$PATH"
 
 # Load RVM if it is installed,
 #  first try to load  user install
@@ -15,13 +22,3 @@ fi
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
-
-# for mtr
-export MTR_OPTIONS=-t
-# for skype
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-# for tmuxinator
-export EDITOR=vim
-
