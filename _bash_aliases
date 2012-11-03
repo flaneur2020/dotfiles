@@ -40,5 +40,7 @@ alias ..='cd ..'
 
 if [[ $KERNEL -eq 'Darwin' ]]; then
     alias ls='ls -G'
+    alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+    unalias ack
 fi
 
