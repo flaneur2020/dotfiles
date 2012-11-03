@@ -59,11 +59,14 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-
 if has('gui_running')
     color molokai
 else
-    color torte
+    set t_Co=256
+    color molokai
+    au InsertEnter * set cursorline
+    au InsertLeave * set nocursorline
+    " hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
 endif
 
 " toolbar sucks
