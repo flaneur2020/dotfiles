@@ -38,6 +38,7 @@ alias rbprof='ruby-prof'
 
 alias ..='cd ..'
 
-if [ $KERNEL == 'Darwin' ]; then
+if [[ $KERNEL -eq 'Darwin' ]]; then
     alias ls='ls -G'
 fi
+
