@@ -6,7 +6,7 @@ class CLI < Thor
   desc "vagrant", "start vagrant, and mount its ~ into ~/vagrant"
   def vagrant
     FileUtils.chdir "#{ENV['HOME']}/work/shire-in-vagrant" do
-      system "vagrant up"
+      system "vagrant up &"
       system "vagrant ssh"
     end
   end
