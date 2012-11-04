@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require 'thor'
+require 'fileutils'
+
+class CLI < Thor
+  desc "vagrant", "start vagrant, and mount its ~ into ~/vagrant"
+  def vagrant
+    FileUtils.chdir "#{ENV['HOME']}/code/vagrant" do
+      system "vagrant up"
+      system "ssh vagrant"
+    end
+  end
+end
+
+CLI.start(ARGV)

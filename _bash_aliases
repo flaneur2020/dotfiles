@@ -1,3 +1,4 @@
+#!/bin/bash
 
 alias be="bundle exec"
 alias bs="bundle show"
@@ -38,7 +39,7 @@ alias rbprof='ruby-prof'
 
 alias ..='cd ..'
 
-if [[ $KERNEL -eq 'Darwin' ]]; then
+if [ "$KERNEL" = 'Darwin' ]; then
     alias ls='ls -G'
     alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
     unalias ack
