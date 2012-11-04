@@ -63,7 +63,7 @@ if has('gui_running')
     color molokai
 else
     set t_Co=256
-    color molokai
+    color desert
     au InsertEnter * set cursorline
     au InsertLeave * set nocursorline
     " hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white

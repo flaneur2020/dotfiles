@@ -5,9 +5,9 @@ require 'fileutils'
 class CLI < Thor
   desc "vagrant", "start vagrant, and mount its ~ into ~/vagrant"
   def vagrant
-    FileUtils.chdir "#{ENV['HOME']}/code/vagrant" do
+    FileUtils.chdir "#{ENV['HOME']}/work/shire-in-vagrant" do
       system "vagrant up"
-      system "ssh vagrant"
+      system "vagrant ssh"
     end
   end
 end

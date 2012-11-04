@@ -92,12 +92,9 @@ DARK="\[\033[30m\]"
 # show branch name on the prompt
 PS1="\n$GREEN\u$DARK@$BLUE\h$GRAY:\w$YELLOW\$(parse_git_branch)$GRAY\n\$ "
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+[[ -s $HOME/.bash_profile ]] && source ~/.bash_profile
+[[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
+[[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
 
 # set bash title into the current command
 trap 'echo -ne "\033]0;$BASH_COMMAND\007" > /dev/stderr' DEBUG
