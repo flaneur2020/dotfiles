@@ -63,12 +63,15 @@ color molokai
 
 if !has('gui_running')
     color desert
-    if $KERNEL=='Darwin'
-        color molokai
-    endif
     au InsertEnter * set cursorline
     au InsertLeave * set nocursorline
 endif
+
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set colorcolumn=80
+    autocmd WinLeave * set colorcolumn=0
+augroup END
 
 " toolbar sucks
 set guioptions=ir
