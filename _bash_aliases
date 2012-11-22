@@ -19,7 +19,6 @@ alias myschema='mysqldump -d'
 
 # for utils
 alias wget="n wget"
-alias ack="ack-grep"
 alias pkill='killall'
 alias ls='ls --color=auto -X --group-directories-first'
 alias ll='ls -alF'
@@ -42,6 +41,5 @@ alias ..='cd ..'
 if [ "$KERNEL" = 'Darwin' ]; then
     alias ls='ls -G'
     alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-    unalias ack
 fi
 
