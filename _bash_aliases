@@ -41,5 +41,6 @@ alias ..='cd ..'
 if [ "$KERNEL" = 'Darwin' ]; then
     alias ls='ls -G'
     alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+    unalias open
 fi
 
