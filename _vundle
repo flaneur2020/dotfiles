@@ -24,6 +24,7 @@ Bundle 'git://github.com/vim-scripts/Rename.git'
 Bundle 'git://github.com/jnwhiteh/vim-golang.git'
 Bundle 'git://github.com/vim-scripts/molokai.git'
 Bundle 'git://github.com/vim-scripts/python.vim--Vasiliev.git'
+Bundle 'git://github.com/vim-scripts/mako.vim.git'
 
 " ...
 filetype plugin indent on     " required! 
