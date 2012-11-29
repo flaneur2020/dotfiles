@@ -18,7 +18,7 @@ alias pyvm="pythonbrew"
 alias myschema='mysqldump -d'
 
 # for utils
-alias wget="n wget"
+alias wget="wget"
 alias ack="ack-grep"
 alias pkill='killall'
 alias ls='ls --color=auto -X --group-directories-first'

@@ -172,6 +172,7 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 nnoremap <silent> <Leader>t :CtrlP<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
 " for a.vim
 noremap <Leader>a :A<cr>
