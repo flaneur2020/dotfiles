@@ -30,6 +30,7 @@ set tags=./tags,./../tags,./../../tags
 
 " ^c^V i don't know how these about
 set laststatus=2
+set scrolloff=4
 set lbr
 set fo+=mB
 set showmatch
@@ -175,6 +176,7 @@ let g:ctrlp_custom_ignore = {
             \ }
 
 nnoremap <silent> <Leader>t :CtrlP<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
 " for a.vim
 noremap <Leader>a :A<cr>
