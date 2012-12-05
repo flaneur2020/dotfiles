@@ -51,6 +51,10 @@ promptinit
 prompt walters
 setopt prompt_subst
 
+# 
+autoload -U select-word-style
+select-word-style bash
+
 # get the colors
 autoload colors zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
