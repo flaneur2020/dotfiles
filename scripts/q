@@ -10,6 +10,13 @@ class CLI < Thor
       system "vagrant ssh"
     end
   end
+
+  def nightjob
+    FileUtils.chdir "#{ENV['HOME']}/code/my-vagrant" do
+      system "vagrant up &"
+      system "vagrant ssh"
+    end
+  end
 end
 
 CLI.start(ARGV)
