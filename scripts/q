@@ -3,7 +3,7 @@ require 'thor'
 require 'fileutils'
 
 class CLI < Thor
-  desc "vagrant", "start vagrant, and mount its ~ into ~/vagrant"
+  desc "vagrant", "start vagrant for dayjob"
   def vagrant
     FileUtils.chdir "#{ENV['HOME']}/work/shire-in-vagrant" do
       system "vagrant up &"
@@ -11,6 +11,7 @@ class CLI < Thor
     end
   end
 
+  desc "nightjob", "start vagrant for nightjob"
   def nightjob
     FileUtils.chdir "#{ENV['HOME']}/code/my-vagrant" do
       system "vagrant up &"
