@@ -18,7 +18,6 @@ alias pyvm="pythonbrew"
 alias myschema='mysqldump -d'
 
 # for utils
-alias ack="ack-grep"
 alias pkill='killall'
 alias ls='ls --color=auto -X --group-directories-first'
 alias ll='ls -alF'

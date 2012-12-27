@@ -8,6 +8,7 @@ export LC_ALL="en_GB.utf8"
 
 export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts:$HOME/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.cabal/bin 
 
 # alias sudo="sudo env PATH=$PATH"
 

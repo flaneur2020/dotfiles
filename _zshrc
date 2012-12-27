@@ -51,6 +51,10 @@ promptinit
 prompt walters
 setopt prompt_subst
 
+# 
+autoload -U select-word-style
+select-word-style bash
+
 # get the colors
 autoload colors zsh/terminfo
 if [[ "$terminfo[colors]" -ge 8 ]]; then
@@ -69,8 +73,8 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$GIT_PROMPT_INFO%})"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$GIT_DIRTY_COLOR%}✘"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT="%{$fg[green]%}%n%{$reset_color%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$reset_color%} 
-$ " 
+PROMPT='%{$fg[green]%}%n%{$fg[black]%}@%{$fg[blue]%}%m%{$fg[black]%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$reset_color%} 
+$ '
 RPROMPT='%{$fg[white]%}%1(j.%j.)'
 
 source ~/.bash_profile
