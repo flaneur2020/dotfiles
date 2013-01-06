@@ -8,6 +8,8 @@ export EDITOR=vim
 export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts:$HOME/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.cabal/bin 
+export PATH=$PATH:/usr/local/share/python
+export PATH=/usr/local/bin:$PATH
 
 # alias sudo="sudo env PATH=$PATH"
 
