@@ -4,6 +4,7 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export EDITOR=vim
+export LC_ALL="en_GB.utf8"   
 
 export PATH=$PATH:$HOME:$HOME/code/dotfiles/scripts:$HOME/bin
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
