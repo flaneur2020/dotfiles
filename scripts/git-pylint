@@ -1,5 +1,6 @@
 #!/bin/sh
-_modified=`git diff-index --name-only HEAD`
+cd "$(git rev-parse --show-toplevel)"
+files_modified=`git diff-index --name-only HEAD`
 
 for f in $files_modified; do
     if [[ $f == *.py ]]; then
@@ -10,4 +11,3 @@ for f in $files_modified; do
         fi
     fi
 done
-exit
