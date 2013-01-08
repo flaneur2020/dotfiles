@@ -1,0 +1,13 @@
+#!/bin/sh
+_modified=`git diff-index --name-only HEAD`
+
+for f in $files_modified; do
+    if [[ $f == *.py ]]; then
+        pylint -E $f
+        if [ $? != 0 ]; then
+            echo "Code fails pylint check."
+            exit 1
+        fi
+    fi
+done
+exit
