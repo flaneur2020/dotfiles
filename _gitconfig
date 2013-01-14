@@ -2,11 +2,17 @@
     name = fleuria
     email = me.ssword@gmail.com
 
+[push]
+    default = simple
+
 [color]
     branch = auto
     status = auto
     diff = auto
     ui = auto
+
+[color "diff"]
+	whitespace = red reverse
 
 [core]
     excludesfile = ~/.gitignore
@@ -29,4 +35,3 @@
 
 [tig "bind"]
     status = a status-update
-
