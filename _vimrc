@@ -1,5 +1,4 @@
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 source ~/.vundle
 behave mswin
@@ -39,7 +38,6 @@ set cino=g0:0t0(sus
 set guifont=WenQuanYi\ Micro\ Hei\ Mono
 set hls
 set backspace=indent,eol,start
-set noswapfile
 set shiftround
 " set whichwrap=b,s,<,>,[,]
 set bsdir=buffer
@@ -60,10 +58,10 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+set t_Co=256
 color molokai
 
 if !has('gui_running')
-    color desert
     au InsertEnter * set cursorline
     au InsertLeave * set nocursorline
 endif
@@ -77,6 +75,7 @@ augroup END
 " toolbar sucks
 set guioptions=ir
 
+au BufEnter * checktime
 au BufNewFile,BufRead *.tt,*.treetop setf treetop
 au BufNewFile,BufRead *.slim set ft=slim
 au BufNewFile,BufRead *.scss set ft=scss

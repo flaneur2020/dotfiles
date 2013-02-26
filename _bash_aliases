@@ -4,6 +4,7 @@ alias be="bundle exec"
 alias bs="bundle show"
 alias gem="gem"
 alias vundle="vim +BundleInstall +qall"
+alias rake='noglob rake'
 
 # for python
 alias de="dae venv"
