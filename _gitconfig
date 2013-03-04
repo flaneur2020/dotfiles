@@ -32,6 +32,7 @@
     who = shortlog -s --
     lgg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(blue) %an %Creset' --abbrev-commit --date=relative
     pylint = !"git-pylint"
+    sub = !"git-sub"
 
 [tig "bind"]
     status = a status-update
