@@ -17,7 +17,7 @@ task :link do
     sh "mkdir -p #{File.dirname(target)}"
     sh "ln -nfs #{pwd}/misc/#{fn} #{target}"
   end
-  # 
+  #
   sh "ln -nfs #{pwd} ~/.dotfiles"
 end
 
@@ -37,13 +37,13 @@ namespace :bs do
   end
 
   task :ubuntu do
-    tools = %w{ 
+    tools = %w{
       vim-gnome chromium-browser firefox putty-tools
       ctags libnotify-bin ubuntu-restricted-extras
-      build-essential openssl libreadline6 libreadline6-dev 
-      curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev 
-      libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev 
-      libxslt-dev autoconf libc6-dev ncurses-dev automake 
+      build-essential openssl libreadline6 libreadline6-dev
+      curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev
+      libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev
+      libxslt-dev autoconf libc6-dev ncurses-dev automake
       libtool bison subversion
     }
     sh "sudo apt-get install #{tools * ' '}"

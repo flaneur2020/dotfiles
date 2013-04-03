@@ -93,16 +93,20 @@ autocmd filetype ruby,haml,erb,slim,yaml,scss,sass,coffee,treetop set tabstop=2
 autocmd filetype python set suffixesadd=
 autocmd filetype markdown set wrap
 
-fun! DelBlank()
+" trailing white space
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+fun! DelTrailingBlank()
   let _s=@/
   let l = line(".")
   let c = col(".")
-  :%s/^\s\+$//e
+  :%s/\s\+$//e
   let @/=_s
   call cursor(l, c)
 endfun
 
-au BufWritePre *.* :call DelBlank()
+au BufWritePre * :call DelTrailingBlank()
 
 " key bindings
 noremap <c-Right> :tabn<cr>
@@ -166,9 +170,9 @@ let g:vimwiki_list = [{'path': '~/code/wiki/vimwiki/src/',
 
 " CtrlP
 let g:ctrlp_root_markers = ['.ctrlp', '.git']
-let g:ctrlp_custom_ignore = { 
-            \ 'dir': '/venv/', 
-            \ 'file': '\.exe$\|\.so$' 
+let g:ctrlp_custom_ignore = {
+            \ 'dir': '/venv/',
+            \ 'file': '\.exe$\|\.so$'
             \ }
 
 nnoremap <silent> <Leader>t :CtrlP<CR>
