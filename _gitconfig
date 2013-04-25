@@ -2,9 +2,6 @@
     name = fleuria
     email = me.ssword@gmail.com
 
-[push]
-    default = simple
-
 [color]
     branch = auto
     status = auto
