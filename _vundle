@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " original repos on github
@@ -24,6 +24,7 @@ Bundle 'derekwyatt/vim-scala.git'
 Bundle 'vim-scripts/molokai.git'
 Bundle 'vim-scripts/python.vim--Vasiliev.git'
 Bundle 'vim-scripts/mako.vim.git'
+Bundle 'slim-template/vim-slim.git'
 
 " ...
-filetype plugin indent on     " required! 
+filetype plugin indent on     " required!
