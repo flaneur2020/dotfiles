@@ -21,6 +21,7 @@ alias myschema='mysqldump -d'
 # for utils
 alias pkill='killall'
 alias ls='ls --color=auto -X --group-directories-first'
+alias gvim="gvim -f"
 alias ll='ls -alF'
 alias la='ls -A'
 alias df='df -hT'
