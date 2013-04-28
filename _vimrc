@@ -187,3 +187,6 @@ noremap <Leader>s :Tlist<cr>
 " for ack.vim
 let g:ackprg="ack-grep -H --column"
 
+" for Hammer.vim
+let g:HAMMER_BROWSER = 'w3m'
+

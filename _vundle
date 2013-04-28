@@ -25,6 +25,7 @@ Bundle 'vim-scripts/molokai.git'
 Bundle 'vim-scripts/python.vim--Vasiliev.git'
 Bundle 'vim-scripts/mako.vim.git'
 Bundle 'slim-template/vim-slim.git'
+Bundle 'matthias-guenther/hammer.vim.git'
 
 " ...
 filetype plugin indent on     " required!
