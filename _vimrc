@@ -68,8 +68,8 @@ endif
 
 augroup BgHighlight
     autocmd!
-    autocmd WinEnter * set colorcolumn=80
-    autocmd WinLeave * set colorcolumn=0
+    autocmd WinEnter * silent! set colorcolumn=80
+    autocmd WinLeave * silent! set colorcolumn=0
 augroup END
 
 " toolbar sucks
@@ -97,6 +97,7 @@ autocmd filetype markdown set wrap
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" delete trailing blank on save
 fun! DelTrailingBlank()
   let _s=@/
   let l = line(".")
@@ -107,6 +108,9 @@ fun! DelTrailingBlank()
 endfun
 
 au BufWritePre * :call DelTrailingBlank()
+
+" change the annoying paren match
+hi MatchParen cterm=bold ctermbg=none ctermfg=none
 
 " key bindings
 noremap <c-Right> :tabn<cr>

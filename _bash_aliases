@@ -33,6 +33,7 @@ alias untar='tar -zxvf'
 alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
 alias so='source'
 alias xclip='xclip -sel clip'
+alias ssh-keygen-default='ssh-keygen -t rsa -C "me.ssword@gmail.com"'
 
 alias t='time'
 alias pyprof='python -m cProfile'

@@ -14,14 +14,14 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
-unsetopt correct_all  
+unsetopt correct_all
 
 # Use modern completion system
 autoload -Uz compinit
 compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _complete 
+zstyle ':completion:*' completer _complete
 zstyle ':completion:*' format ''
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
@@ -51,7 +51,7 @@ promptinit
 prompt walters
 setopt prompt_subst
 
-# 
+#
 autoload -U select-word-style
 select-word-style bash
 
@@ -73,7 +73,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$GIT_PROMPT_INFO%})"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$GIT_DIRTY_COLOR%}✘"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='%{$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%m%{$fg[black]%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$reset_color%} 
+PROMPT='%{$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%m%{$fg[black]%}:%{$fg[white]%}%4~%{$fg[yellow]%}$(git_prompt_info)%{$reset_color%}
 $ '
 RPROMPT='%{$fg[white]%}%1(j.%j.)'
 
