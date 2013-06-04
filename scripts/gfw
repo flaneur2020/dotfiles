@@ -1,4 +1,4 @@
 #!/bin/sh
 
-autossh -M 2000 -v -N fleuria@icybear.net -D 127.0.0.1:7070
+autossh -M 2000 -v -N gfw -D 127.0.0.1:7070
 
