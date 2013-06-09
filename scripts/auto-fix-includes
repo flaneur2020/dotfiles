@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+require 'optparse'
+
+def sh cmd
+  print cmd
+  puts `#{cmd}`
+end
+
+def get_files_with_relative_headers(grep_output)
+  grep_output.lines.map do |line|
+    file = line.split(':')[0]
+    header = line.scan(/"(.*.h)"/)[0]
+    [file, header]
+  end
+end
+
+def copy_header(source, header)
+  source_dir_path = File.dirname(source)
+  header_path = '%s/%s' % [source_dir_path, header]
+  sh "cp #{header_path} #{source_dir_path}"
+end
+
+def fix_includes(files)
+  sh ('sed -i \'s/"\.\.\/.*\/\(.*\.h\)"/"\1"/g\' '  + files * ' ')
+end
+
+$opt = {}
+OptionParser.new do |o|
+  o.on('-f', '--fix-includes') {|b| $opt[:fix_includes] = b}
+  o.on('-c', '--copy-headers') {|b| $opt[:copy_headers] = b}
+end.parse!
+
+grep_output = `grep -R '#include "\.\./' .`
+files_with_relative_headers = get_files_with_relative_headers(grep_output)
+
+if $opt.empty?
+  puts grep_output
+end
+
+if $opt[:copy_headers]
+  files_with_relative_headers.each do |source, header|
+    copy_header(source, header)
+  end
+end
+
+if $opt[:fix_includes]
+  files = files_with_relative_headers.map{|arr| arr.first }
+  fix_includes(files)
+end
