@@ -35,7 +35,7 @@ set fo+=mB
 set showmatch
 set cin
 set cino=g0:0t0(sus
-set guifont=WenQuanYi\ Micro\ Hei\ Mono
+" set guifont=WenQuanYi\ Micro\ Hei\ Mono
 set hls
 set backspace=indent,eol,start
 set shiftround
