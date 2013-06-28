@@ -36,17 +36,21 @@ namespace :bs do
     sh 'vim +BundleInstall +qall'
   end
 
-  task :ubuntu do
-    tools = %w{
-      vim-gnome chromium-browser firefox putty-tools
-      ctags libnotify-bin ubuntu-restricted-extras
-      build-essential openssl libreadline6 libreadline6-dev
-      curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev
-      libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev
-      libxslt-dev autoconf libc6-dev ncurses-dev automake
-      libtool bison subversion
+  task :ubuntu_server do
+    packages = %w{
+      putty-tools ctags build-essential openssl libreadline6 libreadline6-dev
+      curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0
+      libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
+      ncurses-dev automake libtool bison subversion
     }
-    sh "sudo apt-get install #{tools * ' '}"
+    sh "sudo apt-get install #{packages * ' '}"
+  end
+
+  task :ubuntu => [:ubuntu_server] do
+    packages = %w{
+      vim-gnome chromium-browser firefox libnotify-bin ubuntu-restricted-extras
+    }
+    sh "sudo apt-get install #{packages * ' '}"
   end
 
   task :ruby do
