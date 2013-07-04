@@ -92,10 +92,6 @@ DARK="\[\033[30m\]"
 # show branch name on the prompt
 PS1="\n$GREEN\u$DARK@$BLUE\h$GRAY:\w$YELLOW\$(parse_git_branch)$GRAY\n\$ "
 
-[[ -s $HOME/.bash_profile ]] && source ~/.bash_profile
-[[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
-[[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
-
 # set bash title into the current command
 trap 'echo -ne "\033]0;$BASH_COMMAND\007" > /dev/stderr' DEBUG
 
@@ -106,4 +102,3 @@ settitle () {
 PROMPT_COMMAND=settitle
 export PROMPT_COMMAND
 
-[[ -s $HOME/.bash_profile ]] && source ~/.bash_profile

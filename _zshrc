@@ -77,8 +77,7 @@ PROMPT='%{$fg[green]%}%n%{$fg[black]%}@%{$fg[red]%}%m%{$fg[black]%}:%{$fg[white]
 $ '
 RPROMPT='%{$fg[white]%}%1(j.%j.)'
 
-source ~/.bash_profile
-source ~/.bash_aliases
+source ~/.bash_common
 
 # compatible with rake
 alias rake='noglob rake'
