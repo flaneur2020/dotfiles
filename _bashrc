@@ -102,3 +102,5 @@ settitle () {
 PROMPT_COMMAND=settitle
 export PROMPT_COMMAND
 
+source $HOME/.bash_common
+source $HOME/.bash_aliases
