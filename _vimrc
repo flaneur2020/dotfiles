@@ -88,8 +88,8 @@ au BufNewFile,BufRead .bash_aliases set ft=sh
 
 autocmd filetype * set shiftwidth=4
 autocmd filetype * set tabstop=4
-autocmd filetype ruby,haml,erb,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
-autocmd filetype ruby,haml,erb,slim,yaml,scss,sass,coffee,treetop set tabstop=2
+autocmd filetype ruby,haml,html,erb,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
+autocmd filetype ruby,haml,html,erb,slim,yaml,scss,sass,coffee,treetop set tabstop=2
 autocmd filetype python set suffixesadd=
 autocmd filetype markdown set wrap
 
@@ -113,8 +113,8 @@ au BufWritePre * :call DelTrailingBlank()
 hi MatchParen cterm=bold ctermbg=none ctermfg=none
 
 " key bindings
-noremap <c-Right> :tabn<cr>
-noremap <c-left>  :tabp<cr>
+noremap <C-T>n :tabn<cr>
+noremap <C-T>p :tabp<cr>
 
 noremap <C-\> :vs<cr>
 noremap vv <C-Q>

@@ -4,6 +4,8 @@ alias be="bundle exec"
 alias bs="bundle show"
 alias gem="gem"
 alias vundle="vim +BundleInstall +qall"
+alias rake='noglob rake'
+alias vag='vagrant'
 
 # for python
 alias de="dae venv"
@@ -12,7 +14,7 @@ alias djs="dj runserver"
 alias djm="dj schemamigration --auto"
 alias ipy='ipython3'
 alias py='python'
-alias pyvm="pythonbrew"
+alias pybrew="pythonbrew"
 
 # for mysql
 alias myschema='mysqldump -d'
