@@ -108,7 +108,7 @@ fun! DelTrailingBlank()
   call cursor(l, c)
 endfun
 
-au BufWritePre * :call DelTrailingBlank()
+" au BufWritePre * :call DelTrailingBlank()
 
 " change the annoying paren match
 hi MatchParen cterm=bold ctermbg=none ctermfg=none
