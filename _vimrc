@@ -87,12 +87,12 @@ au BufNewFile,BufRead *vundle set ft=vim
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby
 au BufNewFile,BufRead .bash_aliases set ft=sh
 
-autocmd filetype * set shiftwidth=4
-autocmd filetype * set tabstop=4
-autocmd filetype ruby,haml,html,erb,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
-autocmd filetype ruby,haml,html,erb,slim,yaml,scss,sass,coffee,treetop set tabstop=2
-autocmd filetype python set suffixesadd=
-autocmd filetype markdown set wrap
+autocmd FileType * set shiftwidth=4
+autocmd FileType * set tabstop=4
+autocmd FileType ruby,haml,html,erb,slim,yaml,scss,sass,coffee,treetop set shiftwidth=2
+autocmd FileType ruby,haml,html,erb,slim,yaml,scss,sass,coffee,treetop set tabstop=2
+autocmd FileType python set suffixesadd=
+autocmd FileType markdown set wrap
 
 " trailing white space
 highlight ExtraWhitespace ctermbg=red guibg=red
