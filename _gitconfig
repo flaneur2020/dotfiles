@@ -35,7 +35,7 @@ pylint = !"git-pylint"
 sub = !"git-sub"
 idiff = diff --color-words='[^[:space:]]+|.'
 idf = diff --cached --color-words='[^[:space:]]+|.'
-
+format-patch = "format-patch -s --coverletter"
 
 [tig "bind"]
 status = a status-update
