@@ -6,6 +6,9 @@ behave mswin
 syntax on
 filetype plugin on
 
+set exrc
+set secure
+
 "about tab
 set autoindent
 set smartindent

@@ -1,2 +1,4 @@
 #!/bin/sh
 rpm2cpio $* | cpio -i --make-directories
+
+
