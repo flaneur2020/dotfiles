@@ -4,5 +4,6 @@ tags
 *.so
 *.o
 .ctrlp
+*.ko
 *.ptlc
 .exrc

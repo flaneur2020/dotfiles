@@ -1,5 +1,5 @@
 [user]
-name = fleuria
+name = Li Yazhou
 email = me.ssword@gmail.com
 
 [push]
@@ -35,7 +35,14 @@ pylint = !"git-pylint"
 sub = !"git-sub"
 idiff = diff --color-words='[^[:space:]]+|.'
 idf = diff --cached --color-words='[^[:space:]]+|.'
-
+format-patch = "format-patch -s --coverletter"
 
 [tig "bind"]
 status = a status-update
+
+[sendemail]
+smtpencryption = tls
+smtpuser = me.ssword@gmail.com
+smtpserverport = 587
+smtpserver = smtp.gmail.com
+from = Li Yazhou <me.ssword@gmail.com>

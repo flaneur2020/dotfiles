@@ -9,9 +9,6 @@ Bundle 'gmarik/vundle'
 
 " original repos on github
 Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-rails.git'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
 Bundle 'vim-scripts/a.vim.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'mileszs/ack.vim.git'
