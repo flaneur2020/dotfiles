@@ -26,6 +26,7 @@ Bundle 'vim-scripts/python.vim--Vasiliev.git'
 Bundle 'vim-scripts/mako.vim.git'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'matthias-guenther/hammer.vim.git'
+Bundle 'kchmck/vim-coffee-script'
 
 " ...
 filetype plugin indent on     " required!

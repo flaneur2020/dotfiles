@@ -5,3 +5,4 @@ tags
 *.o
 .ctrlp
 *.ptlc
+.exrc

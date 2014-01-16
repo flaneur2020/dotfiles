@@ -176,7 +176,7 @@ let g:vimwiki_list = [{'path': '~/code/wiki/vimwiki/src/',
 " CtrlP
 let g:ctrlp_root_markers = ['.ctrlp', '.git']
 let g:ctrlp_custom_ignore = {
-            \ 'dir': '/venv/',
+            \ 'dir': '/venv/\|/tmp/cache/',
             \ 'file': '\.exe$\|\.so$'
             \ }
 

@@ -2,7 +2,6 @@
 
 alias be="bundle exec"
 alias bs="bundle show"
-alias gem="gem"
 alias vundle="vim +BundleInstall +qall"
 alias rake='noglob rake'
 alias vag='vagrant'
@@ -35,6 +34,8 @@ alias so='source'
 alias xclip='xclip -sel clip'
 alias ssh-keygen-default='ssh-keygen -t rsa -C "me.ssword@gmail.com"'
 alias cvs-st='cvs -qn update'
+alias mvim='open -a MacVim'
+alias lsports='netstat -tulpn'
 
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
