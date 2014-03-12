@@ -8,7 +8,15 @@
 #
 # 	complete -o filenames -F _root_command notify
 
-$* && \
-notify-send "Cool~ \"$*\" finished!" -i 'emblem-cool' || \
-notify-send "Oh No! \"$*\" failed!" -i 'emblem-ohno'
+KERNEL=`uname -s`
 
+if [ $KERNEL == 'Linux' ]; then
+    $* && \
+        notify-send "Cool~ \"$*\" finished!" -i 'emblem-cool' || \
+        notify-send "Oh No! \"$*\" failed!" -i 'emblem-ohno'
+elif [ $KERNEL == 'Darwin' ]; then
+    # gem install terminal-notifier (OS X 10.8 only)
+    $* && \
+        terminal-notifier -message "Cool~ \"$*\" finished!" || \
+        terminal-notifier -message "Oh No! \"$*\" failed!"
+fi

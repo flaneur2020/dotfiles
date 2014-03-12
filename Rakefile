@@ -53,13 +53,21 @@ namespace :bs do
     sh "sudo apt-get install #{packages * ' '}"
   end
 
-  task :ruby do
+  task :rvm do
     sh "curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer > /tmp/rvm-installer"
     sh "bash /tmp/rvm-installer"
     sh "rvm reload"
     sh "rvm install 1.9.3"
     sh "rvm use 1.9.3"
     sh "gem install bundler"
+  end
+
+  task :rbenv do
+    sh "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv || true"
+    sh "git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build || true"
+    sh "git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash || true"
+    sh "rbenv install 2.1.0"
+    sh "rbenv rehash"
   end
 
   task :py do

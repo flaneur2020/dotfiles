@@ -10,18 +10,20 @@ export TERM=xterm-256color
 export MRUBY_BUILD=travis_config.rb
 
 export PATH=$PATH:$HOME:$HOME/.dotfiles/scripts:$HOME/bin:/usr/libexec
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:$HOME/.cabal/bin
 export PATH=$PATH:/usr/local/share/python
 export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.rbenv/bin:$PATH
 
 # alias sudo="sudo env PATH=$PATH"
 
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-[[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
+
+export PYENV_VERSION=2.7.6
+export RBENV_VERSION=2.1.0
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
