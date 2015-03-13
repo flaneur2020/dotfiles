@@ -11,19 +11,23 @@ export MRUBY_BUILD=travis_config.rb
 
 export PATH=$PATH:$HOME:$HOME/.dotfiles/scripts:$HOME/bin:/usr/libexec
 export PATH=$PATH:$HOME/.cabal/bin
-export PATH=$PATH:/usr/local/share/python
+# export PATH=$PATH:/usr/local/share/python
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
+export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
+export PATH=$PATH:$HOME/.go/bin:/usr/local/opt/go/libexec/bin
+export GOPATH=$HOME/go
 
 # alias sudo="sudo env PATH=$PATH"
 
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 
-export PYENV_VERSION=2.7.6
-export RBENV_VERSION=2.1.0
+# export PYENV_VERSION=2.7.8
+# export RBENV_VERSION=2.1.1
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local

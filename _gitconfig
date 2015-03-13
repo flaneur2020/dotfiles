@@ -36,6 +36,7 @@ sub = !"git-sub"
 idiff = diff --color-words='[^[:space:]]+|.'
 idf = diff --cached --color-words='[^[:space:]]+|.'
 format-patch = "format-patch -s --coverletter"
+brr = !"git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | less"
 
 [tig "bind"]
 status = a status-update

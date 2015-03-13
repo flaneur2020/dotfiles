@@ -36,6 +36,7 @@ alias ssh-keygen-default='ssh-keygen -t rsa -C "me.ssword@gmail.com"'
 alias cvs-st='cvs -qn update'
 alias mvim='open -a MacVim'
 alias lsports='netstat -tulpn'
+alias gist='gist -p'
 
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
@@ -48,7 +49,8 @@ alias rbprof='ruby-prof'
 alias ..='cd ..'
 
 if [ "$KERNEL" = 'Darwin' ]; then
-    alias ls='ls -G'
+    # brew install coreutils
+    alias ls='gls --color -h --group-directories-first --ignore="*.pyc"'
     alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
     unalias open
 fi

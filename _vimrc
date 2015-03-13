@@ -88,6 +88,7 @@ au BufNewFile,BufRead *.md set ft=markdown
 au BufNewFile,BufRead *vundle set ft=vim
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby
 au BufNewFile,BufRead .bash_aliases set ft=sh
+au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 
 autocmd FileType * set shiftwidth=4
 autocmd FileType * set tabstop=4
@@ -178,8 +179,8 @@ let g:vimwiki_list = [{'path': '~/code/wiki/vimwiki/src/',
 " CtrlP
 let g:ctrlp_root_markers = ['.ctrlp', '.git']
 let g:ctrlp_custom_ignore = {
-            \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/',
-            \ 'file': '\.exe$\|\.so$'
+            \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/\|/eggs/\|/\.egg-info/',
+            \ 'file': '\.exe$\|\.so$|\.egg$'
             \ }
 
 nnoremap <silent> <Leader>t :CtrlP<CR>
@@ -197,3 +198,26 @@ let g:ackprg="ack-grep -H --column"
 " for Hammer.vim
 let g:HAMMER_BROWSER = 'w3m'
 
+" for syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pyflakes']
+" let g:syntastic_disabled_filetypes=['go']
+let g:syntastic_quiet_messages = { "level": "style", "regex": "not used" }
+let g:syntastic_check_on_open = 1
+let g:syntastic_go_checkers = ['gofmt']
+
+" for vim-go
+let g:go_fmt_command = "gofmt"
+let g:go_auto_type_info = 1
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1

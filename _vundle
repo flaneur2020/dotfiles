@@ -16,7 +16,7 @@ Bundle 'veselosky/vim-rst.git'
 Bundle 'tpope/vim-markdown.git'
 "Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'vim-scripts/Rename.git'
-Bundle 'jnwhiteh/vim-golang.git'
+" Bundle 'fatih/vim-go'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'vim-scripts/molokai.git'
 Bundle 'vim-scripts/python.vim--Vasiliev.git'
@@ -24,6 +24,9 @@ Bundle 'vim-scripts/mako.vim.git'
 Bundle 'slim-template/vim-slim.git'
 Bundle 'matthias-guenther/hammer.vim.git'
 Bundle 'kchmck/vim-coffee-script'
+Bundle "lepture/vim-jinja"
+Bundle 'scrooloose/syntastic'
+Bundle 'davidhalter/jedi-vim'
 
 " ...
 filetype plugin indent on     " required!

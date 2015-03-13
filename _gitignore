@@ -8,3 +8,5 @@ tags
 *.ptlc
 .exrc
 .DS_Store
+.python-version
+/local_settings.py
