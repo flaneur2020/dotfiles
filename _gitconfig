@@ -16,6 +16,7 @@ whitespace = red reverse
 
 [core]
 excludesfile = ~/.gitignore
+attributesfile = ~/.gitattributes
 
 [alias]
 st = status

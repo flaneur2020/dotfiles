@@ -29,6 +29,7 @@ set wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*
 set ruler
 set tags=./tags,./../tags,./../../tags
+" set clipboard=unnamed
 
 " ^c^V i don't know how these about
 set laststatus=2
@@ -53,13 +54,13 @@ set autowrite
 " trade off the gnome maximized bug
 set showtabline=2
 
-" this may help with NERDTree but bad with FuzzyFinder
-" set autochdir
-autocmd BufEnter * lcd %:p:h
-
 set noswapfile
 set nobackup
 set nowritebackup
+
+" this may help with NERDTree but bad with FuzzyFinder
+" set autochdir
+autocmd BufEnter * lcd %:p:h
 
 set t_Co=256
 color molokai
@@ -89,6 +90,7 @@ au BufNewFile,BufRead *vundle set ft=vim
 au BufNewFile,BufRead Gemfile,Rakefile,rakefile set ft=ruby
 au BufNewFile,BufRead .bash_aliases set ft=sh
 au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
+au BufRead,BufNewFile *.avdl setlocal filetype=avro-idl
 
 autocmd FileType * set shiftwidth=4
 autocmd FileType * set tabstop=4
@@ -163,6 +165,7 @@ let NERDTreeSortOrder = ['Makefile', '\/$', '\.py$', '\.rb$', '\.md$', '\.html$'
 let NERDTreeShowBookmarks = 1
 let NERDTreeHightlightCursorline = 1
 let NERDTreeDirArrows = 0
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
 
 " Vimwiki
 let g:vimwiki_use_mouse = 1
@@ -179,9 +182,10 @@ let g:vimwiki_list = [{'path': '~/code/wiki/vimwiki/src/',
 " CtrlP
 let g:ctrlp_root_markers = ['.ctrlp', '.git']
 let g:ctrlp_custom_ignore = {
-            \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/\|/eggs/\|/\.egg-info/',
+            \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/\|/eggs/\|/\.egg-info/\|/_site/\|/_workspace/\|/Godeps/',
             \ 'file': '\.exe$\|\.so$|\.egg$'
             \ }
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 nnoremap <silent> <Leader>t :CtrlP<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
@@ -199,21 +203,21 @@ let g:ackprg="ack-grep -H --column"
 let g:HAMMER_BROWSER = 'w3m'
 
 " for syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pyflakes']
-" let g:syntastic_disabled_filetypes=['go']
-let g:syntastic_quiet_messages = { "level": "style", "regex": "not used" }
-let g:syntastic_check_on_open = 1
+let g:syntastic_disabled_filetypes=['js']
+let g:syntastic_quiet_messages = { "level": "style" }
 let g:syntastic_go_checkers = ['gofmt']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " for vim-go
-let g:go_fmt_command = "gofmt"
+" let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 let g:go_fmt_fail_silently = 1
 let g:go_highlight_functions = 1
@@ -221,3 +225,13 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+au BufWritePost *.go :GoImports
+
+" for jedi-vim
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+let g:jedi#show_call_signatures = 0
+
+" for rainbow
+au FileType c,go,cpp,objc,objcpp call rainbow#load()

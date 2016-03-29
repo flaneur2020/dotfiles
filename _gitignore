@@ -10,3 +10,8 @@ tags
 .DS_Store
 .python-version
 /local_settings.py
+/node_modules
+dist/
+htmlcov/
+nosetests.xml
+pytest.xml

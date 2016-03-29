@@ -52,6 +52,7 @@ if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore="*.pyc"'
     alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+    alias atom='open -a Atom'
     unalias open
 fi
 
