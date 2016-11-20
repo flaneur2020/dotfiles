@@ -15,3 +15,4 @@ dist/
 htmlcov/
 nosetests.xml
 pytest.xml
+.vscode/

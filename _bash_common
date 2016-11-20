@@ -28,8 +28,8 @@ eval "$(pyenv virtualenv-init -)"
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 
-# export PYENV_VERSION=2.7.8
-# export RBENV_VERSION=2.1.1
+export PYENV_VERSION=2.7.11
+export RBENV_VERSION=2.3.0
 # export GO15VENDOREXPERIMENT=1
 
 export SERVICE_DISCOVERY_URI=consul://consului.aws.dev:8500

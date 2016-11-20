@@ -6,6 +6,7 @@ alias vundle="vim +BundleInstall +qall"
 alias rake='noglob rake'
 alias vag='vagrant'
 
+
 # for python
 alias de="dae venv"
 alias dja="django-admin.py"
@@ -22,6 +23,7 @@ alias myschema='mysqldump -d'
 alias pkill='killall'
 alias ls='ls --color=auto -X --group-directories-first'
 alias gvim="gvim -f"
+alias vsc="open -a 'Visual Studio Code'"
 alias ll='ls -alF'
 alias la='ls -A'
 alias df='df -hT'

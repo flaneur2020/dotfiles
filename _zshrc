@@ -78,7 +78,7 @@ $ '
 RPROMPT='%{$fg[white]%}%1(j.%j.)'
 
 source ~/.bash_common
-source `brew --prefix`/etc/profile.d/z.sh
+# source `brew --prefix`/etc/profile.d/z.sh
 
 # compatible with rake
 alias rake='noglob rake'
