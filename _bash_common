@@ -16,9 +16,12 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
 export GOPATH=$HOME/go
+export GOROOT_BOOTSTRAP=$GOROOT
 export PATH=$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH="./node_modules/.bin:$PATH"
+export PATH="~/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/qt/bin:$PATH"
 # alias sudo="sudo env PATH=$PATH"
 
 eval "$(rbenv init - zsh)"
@@ -28,11 +31,9 @@ eval "$(pyenv virtualenv-init -)"
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 
-export PYENV_VERSION=2.7.11
+# export PYENV_VERSION='2.7.11'
 export RBENV_VERSION=2.3.0
 # export GO15VENDOREXPERIMENT=1
-
-export SERVICE_DISCOVERY_URI=consul://consului.aws.dev:8500
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local

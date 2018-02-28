@@ -82,3 +82,4 @@ source ~/.bash_common
 
 # compatible with rake
 alias rake='noglob rake'
+export PATH="/usr/local/opt/qt/bin:$PATH"
