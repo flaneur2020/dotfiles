@@ -27,7 +27,8 @@ Bundle 'posva/vim-vue.git'
 Bundle 'neomake/neomake.git'
 Bundle 'Shougo/deoplete.nvim.git'
 Bundle 'zchee/deoplete-go.git'
-
+Bundle 'ervandew/supertab.git'
+Bundle 'autozimu/LanguageClient-neovim.git'
 
 " ...
 filetype plugin indent on     " required!

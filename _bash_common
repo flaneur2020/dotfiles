@@ -23,6 +23,7 @@ export PATH="./node_modules/.bin:$PATH"
 export PATH="~/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 # alias sudo="sudo env PATH=$PATH"
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
 eval "$(rbenv init - zsh)"
 eval "$(pyenv init -)"
@@ -34,6 +35,7 @@ eval "$(pyenv virtualenv-init -)"
 # export PYENV_VERSION='2.7.11'
 export RBENV_VERSION=2.3.0
 # export GO15VENDOREXPERIMENT=1
+export PIPENV_VENV_IN_PROJECT=1
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local

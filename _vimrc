@@ -32,6 +32,7 @@ set wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*
 set ruler
 set tags=./tags,./../tags,./../../tags
+set hidden
 
 " cd relative to the current file
 autocmd BufEnter * lcd %:p:h
@@ -197,3 +198,19 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#popup_select_first = 0
 let g:jedi#completions_enabled = 0
 let g:jedi#show_call_signatures = 0
+
+" for lsp
+" https://github.com/autozimu/LanguageClient-neovim
+let g:LanguageClient_serverCommands = {
+    \ 'go': ['go-langserver', '-gocodecompletion'],
+    \ 'python': ['pyls'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+nmap <C-]> gd
+noremap <C-t> :bp<CR>

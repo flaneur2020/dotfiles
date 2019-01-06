@@ -48,5 +48,6 @@ smtpuser = me.ssword@gmail.com
 smtpserverport = 587
 smtpserver = smtp.gmail.com
 from = Li Yazhou <me.ssword@gmail.com>
+
 [credential]
 	helper = osxkeychain
