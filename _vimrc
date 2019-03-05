@@ -33,6 +33,8 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*
 set ruler
 set tags=./tags,./../tags,./../../tags
 set hidden
+set list
+set listchars=tab:>-     " > is shown at the beginning, - throughout
 
 " cd relative to the current file
 autocmd BufEnter * lcd %:p:h
@@ -102,6 +104,7 @@ autocmd FileType * set tabstop=4
 autocmd FileType ruby,haml,html,jinja,erb,slim,yaml,scss,sass,coffee,treetop,vue set shiftwidth=2
 autocmd FileType ruby,haml,html,jinja,erb,slim,yaml,scss,sass,coffee,treetop,vue set tabstop=2
 autocmd FileType python set suffixesadd=
+autocmd FileType go,java set nolist  " golang 不特殊显示 tab 字符
 autocmd FileType markdown set wrap
 
 " trailing white space
@@ -175,29 +178,6 @@ let g:go_fmt_fail_silently = 1
 let g:go_list_type = 'quickfix'
 let g:syntastic_go_checkers = ['golint', 'govet', 'gofmt']
 let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
-
-" for vim-go
-" let g:go_fmt_command = "goimports"
-"
-" let g:godef_split = 0
-" let g:go_fmt_fail_silently = 1
-" let g:go_list_type = 'quickfix'
-let g:go_auto_type_info = 1
-let g:go_fmt_fail_silently = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods =  1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_auto_type_info = 1
-" let g:go_metalinter_enabled = ['golint', 'errcheck']
-au BufWritePost *.go :GoImports
-
-" for jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#completions_enabled = 0
-let g:jedi#show_call_signatures = 0
 
 " for lsp
 " https://github.com/autozimu/LanguageClient-neovim

@@ -19,3 +19,5 @@ pytest.xml
 .vagrant/
 /selftesthotqa.py
 etc/config.yml
+.vim/
+.venv/

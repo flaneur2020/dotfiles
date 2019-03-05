@@ -7,26 +7,21 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle.git'
 
-" original repos on github
+" syntaxes
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'kien/ctrlp.vim.git'
-Bundle 'mileszs/ack.vim.git'
 Bundle 'veselosky/vim-rst.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'vim-scripts/Rename.git'
-Bundle 'fatih/vim-go.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'vim-scripts/molokai.git'
 Bundle 'vim-scripts/mako.vim.git'
-Bundle 'slim-template/vim-slim.git'
-Bundle "lepture/vim-jinja.git"
 Bundle 'scrooloose/syntastic.git'
-" Bundle 'oblitum/rainbow.git'
-" Bundle 'dln/avro-vim.git'
 Bundle 'posva/vim-vue.git'
+
+" auto completions
 Bundle 'neomake/neomake.git'
 Bundle 'Shougo/deoplete.nvim.git'
-Bundle 'zchee/deoplete-go.git'
 Bundle 'ervandew/supertab.git'
 Bundle 'autozimu/LanguageClient-neovim.git'
 
