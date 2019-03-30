@@ -21,3 +21,4 @@ pytest.xml
 etc/config.yml
 .vim/
 .venv/
+.factorypath

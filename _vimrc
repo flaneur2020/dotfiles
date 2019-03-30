@@ -29,7 +29,7 @@ color molokai
 " misc
 set nu
 set wildmenu
-set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*
+set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*,*/vendor
 set ruler
 set tags=./tags,./../tags,./../../tags
 set hidden
@@ -125,10 +125,11 @@ let NERDTreeDirArrows = 0
 " CtrlP
 let g:ctrlp_root_markers = ['.ctrlp', '.git']
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/\|/eggs/\|/\.egg-info/\|/_site/\|/_workspace/\|/Godeps/',
+    \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/\|/eggs/\|/\.egg-info/\|/_site/\|/Godeps/',
     \ 'file': '\.exe$\|\.so$|\.egg$'
     \ }
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" ctlp_user_command 这个命令可能导致上面这个 ctrlp_custom_ignore 失效?
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v "vendor\|venv"']
 nnoremap <silent> <Leader>t :CtrlP<CR>
 nnoremap <D-p> :CtrlP<CR>
 nnoremap <M-p> :CtrlP<CR>
@@ -174,10 +175,19 @@ let g:syntastic_stl_format = '[%E{E: %fe #%e}%B{, }%W{W: %fw #%w}]'
 let g:syntastic_java_javac_options = "-g:none -source 8 -Xmaxerrs 5 -Xmaswarns 5"
 
 let g:godef_split = 0
-let g:go_fmt_fail_silently = 1
 let g:go_list_type = 'quickfix'
 let g:syntastic_go_checkers = ['golint', 'govet', 'gofmt']
 let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
+let g:go_auto_type_info = 1
+let g:go_fmt_fail_silently = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods =  1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_auto_type_info = 1
+" let g:go_metalinter_enabled = ['golint', 'errcheck']
+au BufWritePost *.go :GoImports
 
 " for lsp
 " https://github.com/autozimu/LanguageClient-neovim
