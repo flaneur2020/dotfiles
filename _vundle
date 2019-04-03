@@ -15,11 +15,13 @@ Bundle 'tpope/vim-markdown.git'
 Bundle 'vim-scripts/Rename.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'vim-scripts/molokai.git'
-Bundle 'vim-scripts/mako.vim.git'
-Bundle 'scrooloose/syntastic.git'
+" Bundle 'vim-scripts/mako.vim.git'
+" Bundle 'scrooloose/syntastic.git'
 Bundle 'posva/vim-vue.git'
+Bundle 'fatih/vim-go.git'
 
-" auto completions
+" auto completions & syntax checks
+Bundle 'maralla/validator.vim.git'
 Bundle 'neomake/neomake.git'
 Bundle 'Shougo/deoplete.nvim.git'
 Bundle 'ervandew/supertab.git'

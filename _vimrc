@@ -139,7 +139,7 @@ let g:deoplete#enable_at_startup = 1
 
 " for syntastic
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%F
 set statusline+=%*
 let g:syntastic_check_on_open=1
