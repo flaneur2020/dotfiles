@@ -28,6 +28,7 @@ color molokai
 
 " misc
 set nu
+set signcolumn=yes
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*,*/vendor
 set ruler
@@ -191,8 +192,12 @@ au BufWritePost *.go :GoImports
 
 " for lsp
 " https://github.com/autozimu/LanguageClient-neovim
+" go get -u github.com/saibing/bingo
+let g:LanguageClient_rootMarkers = {
+    \ 'go': ['.git', 'go.mod'],
+    \ }
 let g:LanguageClient_serverCommands = {
-    \ 'go': ['go-langserver', '-gocodecompletion'],
+    \ 'go': ['bingo'],
     \ 'python': ['pyls'],
     \ }
 

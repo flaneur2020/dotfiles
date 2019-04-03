@@ -21,7 +21,6 @@ Bundle 'posva/vim-vue.git'
 Bundle 'fatih/vim-go.git'
 
 " auto completions & syntax checks
-Bundle 'maralla/validator.vim.git'
 Bundle 'neomake/neomake.git'
 Bundle 'Shougo/deoplete.nvim.git'
 Bundle 'ervandew/supertab.git'
