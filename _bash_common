@@ -13,6 +13,7 @@ export PATH=$PATH:$HOME:$HOME/.dotfiles/scripts:/usr/libexec
 export PATH=$PATH:$HOME/.cabal/bin
 # export PATH=$PATH:/usr/local/share/python
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/kubebuilder/bin:$PATH
 export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
 export GOPATH=$HOME/go
@@ -24,6 +25,7 @@ export PATH="~/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 # alias sudo="sudo env PATH=$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+export WASMER_DIR="$HOME/.wasmer"
 
 eval "$(rbenv init - zsh)"
 eval "$(pyenv init -)"
@@ -31,6 +33,7 @@ eval "$(pyenv virtualenv-init -)"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # loads wasmer
 
 # export PYENV_VERSION='2.7.11'
 export RBENV_VERSION=2.3.0

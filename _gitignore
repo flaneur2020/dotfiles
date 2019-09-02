@@ -22,3 +22,5 @@ etc/config.yml
 .vim/
 .venv/
 .factorypath
+cmd/debug
+./tmp/

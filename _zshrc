@@ -83,3 +83,11 @@ source ~/.bash_common
 # compatible with rake
 alias rake='noglob rake'
 export PATH="/usr/local/opt/qt/bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/liyazhou/.sdkman"
+[[ -s "/Users/liyazhou/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/liyazhou/.sdkman/bin/sdkman-init.sh"
+
+# Wasmer
+export WASMER_DIR="$HOME/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer

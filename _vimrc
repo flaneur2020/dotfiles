@@ -26,16 +26,18 @@ end
 set t_Co=256
 color molokai
 
-" misc
+" status lines & columns
 set nu
-set signcolumn=yes
+set signcolumn=no
 set wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*,*/vendor
 set ruler
-set tags=./tags,./../tags,./../../tags
 set hidden
 set list
 set listchars=tab:>-     " > is shown at the beginning, - throughout
+set statusline+=%#warningmsg#
+set statusline+=%F
+set statusline+=%*
 
 " cd relative to the current file
 autocmd BufEnter * lcd %:p:h
@@ -138,57 +140,13 @@ nnoremap <M-p> :CtrlP<CR>
 " for deoplete
 let g:deoplete#enable_at_startup = 1
 
-" for syntastic
-set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%F
-set statusline+=%*
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=1
-let g:syntastic_aggregate_errors=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_enable_ballons=has('ballon_eval')
-" let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_auto_jump=1
-" let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=3
-let g:syntastic_ignore_files = ['^/usr/', '*node_modules*', '*vendor*', '*build*', '*LOCAL*', '*BASE', '*REMOTE*']
-let g:syntastic_mode_map = { 'mode': 'active' }
-let g:syntastic_javascript_checkers=['jshint', 'jscs']
-let g:syntastic_json_checkers=['jsonlint', 'jsonval']
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
-let g:syntastic_perl_checkers=['perl', 'perlcritic', 'podchecker']
-let g:syntastic_python_checkers=['pyflakes']
-let g:syntastic_cpp_checkers=['gcc', 'cppcheck', 'cpplint', 'ycm', 'clang_tidy', 'clang_check']
-let g:syntastic_c_checkers=['gcc', 'make', 'cppcheck', 'clang_tidy', 'clang_check']
-let g:syntastic_haml_checkers=['haml_lint', 'haml']
-let g:syntastic_html_checkers=['jshint']
-let g:syntastic_yaml_checkers=['jsyaml']
-let g:syntastic_sh_checkers=['sh', 'shellcheck', 'checkbashisms']
-let g:syntastic_vim_checkers=['vimlint']
-let g:syntastic_enable_perl_checker=1
-let g:syntastic_c_clang_tidy_sort=1
-let g:syntastic_c_clang_check_sort=1
-let g:syntastic_c_remove_include_errors=1
-let g:syntastic_quiet_messages = { "level": "[]", "file": ['*_LOCAL_*', '*_BASE_*', '*_REMOTE_*']  }
-let g:syntastic_stl_format = '[%E{E: %fe #%e}%B{, }%W{W: %fw #%w}]'
-let g:syntastic_java_javac_options = "-g:none -source 8 -Xmaxerrs 5 -Xmaswarns 5"
+" for go
+" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+" autocmd BufWritePost *.go :%! goimports
+autocmd BufWritePost *.go :GoImports
 
-let g:godef_split = 0
-let g:go_list_type = 'quickfix'
-let g:syntastic_go_checkers = ['golint', 'govet', 'gofmt']
-let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
-let g:go_auto_type_info = 1
-let g:go_fmt_fail_silently = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods =  1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_auto_type_info = 1
-" let g:go_metalinter_enabled = ['golint', 'errcheck']
-au BufWritePost *.go :GoImports
+
+" autocmd BufWritePost *.go :GoImports
 
 " for lsp
 " https://github.com/autozimu/LanguageClient-neovim
@@ -197,7 +155,7 @@ let g:LanguageClient_rootMarkers = {
     \ 'go': ['.git', 'go.mod'],
     \ }
 let g:LanguageClient_serverCommands = {
-    \ 'go': ['bingo'],
+    \ 'go': ['gopls'],
     \ 'python': ['pyls'],
     \ }
 
@@ -208,4 +166,4 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 nmap <C-]> gd
-noremap <C-t> :bp<CR>
+noremap <C-t> <C-O>

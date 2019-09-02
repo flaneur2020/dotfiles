@@ -19,6 +19,7 @@ Bundle 'vim-scripts/molokai.git'
 " Bundle 'scrooloose/syntastic.git'
 Bundle 'posva/vim-vue.git'
 Bundle 'fatih/vim-go.git'
+Bundle "udalov/kotlin-vim.git"
 
 " auto completions & syntax checks
 Bundle 'neomake/neomake.git'
