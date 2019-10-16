@@ -11,7 +11,7 @@ set autoindent
 set smartindent
 set smarttab
 set expandtab
-set completeopt-=preview
+" set completeopt-=preview
 
 " encoding: utf-8
 set ambiwidth=double
@@ -28,8 +28,8 @@ color molokai
 
 " status lines & columns
 set nu
-set signcolumn=no
-set wildmenu
+" set signcolumn=no
+" set wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*/venv/*,*/vendor
 set ruler
 set hidden
@@ -58,8 +58,8 @@ set shiftround
 set bsdir=buffer
 set smartcase
 set nowrap
-set autoread
-set autowrite
+" set autoread
+" set autowrite
 
 " no backups
 set noswapfile
@@ -68,8 +68,8 @@ set nowritebackup
 
 " key bindings
 noremap <C-\> :vs<cr>
-inoremap <PageUp> <esc>gka
-inoremap <PageDown> <esc>gja
+" inoremap <PageUp> <esc>gka
+" inoremap <PageDown> <esc>gja
 noremap <UP> gk
 noremap <Down> gj
 noremap <LEFT> h
@@ -137,15 +137,10 @@ nnoremap <silent> <Leader>t :CtrlP<CR>
 nnoremap <D-p> :CtrlP<CR>
 nnoremap <M-p> :CtrlP<CR>
 
-" for deoplete
-let g:deoplete#enable_at_startup = 1
-
 " for go
 " autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 " autocmd BufWritePost *.go :%! goimports
 autocmd BufWritePost *.go :GoImports
-
-
 " autocmd BufWritePost *.go :GoImports
 
 " for lsp
@@ -157,6 +152,7 @@ let g:LanguageClient_rootMarkers = {
 let g:LanguageClient_serverCommands = {
     \ 'go': ['gopls'],
     \ 'python': ['pyls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
     \ }
 
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>

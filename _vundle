@@ -7,25 +7,27 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle.git'
 
-" syntaxes
+" tools
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'kien/ctrlp.vim.git'
+Bundle 'itchyny/lightline.vim.git'
+
+" langs
 Bundle 'veselosky/vim-rst.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'vim-scripts/Rename.git'
 Bundle 'derekwyatt/vim-scala.git'
 Bundle 'vim-scripts/molokai.git'
-" Bundle 'vim-scripts/mako.vim.git'
-" Bundle 'scrooloose/syntastic.git'
 Bundle 'posva/vim-vue.git'
 Bundle 'fatih/vim-go.git'
 Bundle "udalov/kotlin-vim.git"
 
 " auto completions & syntax checks
 Bundle 'neomake/neomake.git'
-Bundle 'Shougo/deoplete.nvim.git'
+" Bundle 'Shougo/deoplete.nvim.git'
 Bundle 'ervandew/supertab.git'
 Bundle 'autozimu/LanguageClient-neovim.git'
+
 
 " ...
 filetype plugin indent on     " required!
