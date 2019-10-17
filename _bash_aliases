@@ -2,7 +2,7 @@
 
 alias be="bundle exec"
 alias bs="bundle show"
-alias vundle="vim +BundleInstall +qall"
+alias vundle="vim +PlugInstall +qall"
 alias rake='noglob rake'
 alias vag='vagrant'
 

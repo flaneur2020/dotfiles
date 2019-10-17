@@ -1,33 +1,39 @@
-filetype off                   " required!
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://rawhubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" install vim-plug if nesscary
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle.git'
+call plug#begin('~/.vim/plugged')
+
+let g:plug_url_format = 'git@github.com:%s.git'
 
 " tools
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'itchyny/lightline.vim.git'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/Rename'
+
+" themes
+Plug 'vim-scripts/molokai'
 
 " langs
-Bundle 'veselosky/vim-rst.git'
-Bundle 'tpope/vim-markdown.git'
-Bundle 'vim-scripts/Rename.git'
-Bundle 'derekwyatt/vim-scala.git'
-Bundle 'vim-scripts/molokai.git'
-Bundle 'posva/vim-vue.git'
-Bundle 'fatih/vim-go.git'
-Bundle "udalov/kotlin-vim.git"
+" Plug 'tpope/vim-markdown'
+" Plug 'derekwyatt/vim-scala'
+Plug 'posva/vim-vue'
+" Plug 'udalov/kotlin-vim'
 
 " auto completions & syntax checks
-Bundle 'neomake/neomake.git'
-" Bundle 'Shougo/deoplete.nvim.git'
-Bundle 'ervandew/supertab.git'
-Bundle 'autozimu/LanguageClient-neovim.git'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ervandew/supertab'
+Plug 'neomake/neomake'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
-
-" ...
-filetype plugin indent on     " required!
+call plug#end()
