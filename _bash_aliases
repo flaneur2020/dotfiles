@@ -2,22 +2,14 @@
 
 alias be="bundle exec"
 alias bs="bundle show"
-alias vundle="vim +PlugInstall +qall"
-alias rake='noglob rake'
-alias vag='vagrant'
-
+alias vundle='nvim +PlugInstall +UpdateRemotePlugins +qa'
 
 # for python
 alias de="dae venv"
 alias dja="django-admin.py"
 alias djs="dj runserver"
 alias djm="dj schemamigration --auto"
-alias ipy='ipython3'
 alias py='python'
-alias pybrew="pythonbrew"
-
-# for mysql
-alias myschema='mysqldump -d'
 
 # for utils
 alias pkill='killall'
@@ -32,23 +24,12 @@ alias open='gnome-open'
 alias pgrep='pgrep -l'
 alias ggrep='git grep -n'
 alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
-alias so='source'
-alias xclip='xclip -sel clip'
-alias ssh-keygen-default='ssh-keygen -t rsa -C "me.ssword@gmail.com"'
-alias mvim='open -a MacVim'
-alias typora='open -a typora'
-alias lsports='netstat -tulpn'
-alias gist='gist -p'
 alias vi='nvim'
 alias vim='nvim'
 
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
-
-alias t='time'
-alias pyprof='python -m cProfile'
-alias rbprof='ruby-prof'
 
 alias ..='cd ..'
 
@@ -57,6 +38,7 @@ if [ "$KERNEL" = 'Darwin' ]; then
     alias ls='gls --color -h --group-directories-first --ignore="*.pyc"'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
     alias atom='open -a Atom'
+    alias mvim='open -a MacVim'
+    alias typora='open -a typora'
     unalias open
 fi
-
