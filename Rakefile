@@ -36,12 +36,17 @@ namespace :bs do
     sh 'vim +BundleInstall +qall'
   end
 
+  task :zsh do
+    sh 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    sh 'git clone https://github.com/agkozak/zsh-z ~/.oh-my-zsh/plugins/zsh-z'
+  end
+
   task :ubuntu_server do
     packages = %w{
       putty-tools ctags build-essential openssl libreadline6 libreadline6-dev
       curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0
       libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
-      ncurses-dev automake libtool bison subversion
+      ncurses-dev automake libtool bison
     }
     sh "sudo apt-get install #{packages * ' '}"
   end
@@ -51,15 +56,6 @@ namespace :bs do
       vim-gnome chromium-browser firefox libnotify-bin ubuntu-restricted-extras
     }
     sh "sudo apt-get install #{packages * ' '}"
-  end
-
-  task :rvm do
-    sh "curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer > /tmp/rvm-installer"
-    sh "bash /tmp/rvm-installer"
-    sh "rvm reload"
-    sh "rvm install 1.9.3"
-    sh "rvm use 1.9.3"
-    sh "gem install bundler"
   end
 
   task :rbenv do
