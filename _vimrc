@@ -11,6 +11,8 @@ set autoindent
 set smartindent
 set smarttab
 set expandtab
+set sw=4
+set tabstop=4
 " set completeopt-=preview
 
 " encoding: utf-8
@@ -35,7 +37,6 @@ set hidden
 set showmatch
 set list
 set listchars=tab:>-     " > is shown at the beginning, - throughout
-set tabstop=4
 set scrolloff=4
 
 " cd relative to the current file
@@ -58,7 +59,8 @@ noremap <LEFT> h
 noremap <Right> l
 
 au BufNewFile,BufRead *vundle set ft=vim
-autocmd FileType ruby,haml,html,jinja,erb,slim,yaml,scss,sass,coffee,treetop,vue set shiftwidth=2
+au BufNewFile,BufRead *tsx set ft=javascript
+autocmd FileType ruby,haml,html,jinja,erb,slim,yaml,scss,sass,coffee,treetop,vue set sw=2
 autocmd FileType ruby,haml,html,jinja,erb,slim,yaml,scss,sass,coffee,treetop,vue set tabstop=2
 autocmd FileType go,java set nolist  " golang 不特殊显示 tab 字符
 autocmd FileType markdown set wrap
@@ -86,10 +88,6 @@ nnoremap <silent> <Leader>t :CtrlP<CR>
 " for go
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
-" for ncm2
-set completeopt=noinsert,menuone,noselect
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
 " for lsp
 " https://github.com/autozimu/LanguageClient-neovim
 let g:LanguageClient_rootMarkers = {
@@ -99,7 +97,8 @@ let g:LanguageClient_rootMarkers = {
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'python': ['python -m pyls'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
+    \ 'python': ['pyls'],
     \ 'go': ['gopls'],
     \ 'vue': ['vls'],
     \ }

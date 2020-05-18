@@ -21,8 +21,9 @@ export GOROOT_BOOTSTRAP=$GOROOT
 export PATH=$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH="./node_modules/.bin:$PATH"
-export PATH="~/.cargo/bin:$PATH"
-export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.arc/arcanist/bin:$PATH"
+
 # alias sudo="sudo env PATH=$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export WASMER_DIR="$HOME/.wasmer"
@@ -35,10 +36,11 @@ eval "$(pyenv virtualenv-init -)"
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # loads wasmer
 
-# export PYENV_VERSION='2.7.11'
+# export PYENV_VERSION='3.6.0'
 export RBENV_VERSION=2.3.0
 # export GO15VENDOREXPERIMENT=1
 export PIPENV_VENV_IN_PROJECT=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local

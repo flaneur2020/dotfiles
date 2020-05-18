@@ -27,10 +27,9 @@ Plug 'posva/vim-vue'
 " Plug 'udalov/kotlin-vim'
 
 " auto completions & syntax checks
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
 Plug 'ervandew/supertab'
 Plug 'neomake/neomake'
+Plug 'Shougo/deoplete.nvim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
