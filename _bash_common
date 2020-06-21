@@ -23,6 +23,7 @@ export PATH=$HOME/bin:$PATH
 export PATH="./node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.arc/arcanist/bin:$PATH"
+export PATH="$HOME/code/fenbi-code-tool/bin:$PATH"
 
 # alias sudo="sudo env PATH=$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
@@ -31,6 +32,7 @@ export WASMER_DIR="$HOME/.wasmer"
 eval "$(rbenv init - zsh)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh

@@ -99,3 +99,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.bash_common
+
+# eval "$(starship init zsh)"
+
+# make tab more bash-like: https://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
+setopt noautomenu
+setopt nomenucomplete

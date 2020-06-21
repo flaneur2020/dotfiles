@@ -1,15 +1,6 @@
 #!/bin/bash
 
-alias be="bundle exec"
-alias bs="bundle show"
 alias vundle='nvim +PlugInstall +UpdateRemotePlugins +qa'
-
-# for python
-alias de="dae venv"
-alias dja="django-admin.py"
-alias djs="dj runserver"
-alias djm="dj schemamigration --auto"
-alias py='python'
 
 # for utils
 alias pkill='killall'
@@ -30,6 +21,8 @@ alias vim='nvim'
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
+
+alias s5proxy='HTTP_PROXY=s5socks://localhost:8081 HTTPS_PROXY=s5socks://localhost:8081'
 
 alias ..='cd ..'
 
