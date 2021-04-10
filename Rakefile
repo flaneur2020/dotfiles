@@ -32,8 +32,9 @@ end
 
 namespace :bs do
   task :vim do
-    sh 'git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle; true'
-    sh 'vim +BundleInstall +qall'
+    sh 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    sh 'ln -s ~/.vimrc .config/nvim/init.vim'
+    sh 'vim +PlugInstall +qall'
   end
 
   task :zsh do
@@ -41,19 +42,9 @@ namespace :bs do
     sh 'git clone https://github.com/agkozak/zsh-z ~/.oh-my-zsh/plugins/zsh-z'
   end
 
-  task :ubuntu_server do
+  task :ubuntu do
     packages = %w{
-      putty-tools ctags build-essential openssl libreadline6 libreadline6-dev
-      curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0
-      libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
-      ncurses-dev automake libtool bison
-    }
-    sh "sudo apt-get install #{packages * ' '}"
-  end
-
-  task :ubuntu => [:ubuntu_server] do
-    packages = %w{
-      vim-gnome chromium-browser firefox libnotify-bin ubuntu-restricted-extras
+      build-essential openssl curl git-core
     }
     sh "sudo apt-get install #{packages * ' '}"
   end
