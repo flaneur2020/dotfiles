@@ -30,9 +30,6 @@ Plug 'posva/vim-vue'
 Plug 'ervandew/supertab'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
