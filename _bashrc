@@ -104,3 +104,5 @@ export PROMPT_COMMAND
 
 source $HOME/.bash_common
 source $HOME/.bash_aliases
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

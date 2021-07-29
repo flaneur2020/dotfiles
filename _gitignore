@@ -24,3 +24,7 @@ etc/config.yml
 .factorypath
 cmd/debug
 ./tmp/
+.classpath
+.project
+.settings/
+.idea/
