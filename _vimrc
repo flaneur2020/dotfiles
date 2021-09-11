@@ -69,6 +69,9 @@ autocmd FileType markdown set wrap
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
+" fix the highlight about matching paren
+hi MatchParen cterm=bold ctermbg=none ctermfg=blue
+
 " PLUGINS
 
 " for NerdTree
@@ -81,16 +84,21 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '/venv/\|/tmp/cache/\|/coverage/\|/vendor/\|/eggs/\|/\.egg-info/\|/_site/\|/Godeps/',
     \ 'file': '\.exe$\|\.so$|\.egg$'
     \ }
-" ctlp_user_command 这个命令可能导致上面这个 ctrlp_custom_ignore 失效?
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v "vendor\|venv"']
 nnoremap <silent> <Leader>t :CtrlP<CR>
 
-" for go
-" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
 " for lsp
-let g:coc_global_extensions = ['coc-json', 'coc-css', 'coc-go']
+let g:coc_global_extensions = [
+    \ 'coc-json',
+    \ 'coc-css',
+    \ 'coc-go',
+    \ 'coc-rls',
+    \ 'coc-pyright',
+    \ 'coc-clangd',
+    \ ]
 
 noremap <C-]> :call CocActionAsync('jumpDefinition')<CR>
 noremap <C-t> <C-O>
+
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+" autocmd BufWritePre *.py :silent call CocAction('format')

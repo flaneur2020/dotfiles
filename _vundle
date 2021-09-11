@@ -16,6 +16,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/Rename'
+Plug 'andymass/vim-matchup'
 
 " themes
 Plug 'vim-scripts/molokai'

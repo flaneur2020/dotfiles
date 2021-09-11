@@ -41,11 +41,12 @@ eval "$(pyenv virtualenv-init -)"
 [ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # loads wasmer
 
-# export PYENV_VERSION='3.6.0'
-export RBENV_VERSION=2.2.0
+export PYENV_VERSION='3.9.5'
+export RBENV_VERSION=2.3.0
 # export GO15VENDOREXPERIMENT=1
 export PIPENV_VENV_IN_PROJECT=1
 export HOMEBREW_NO_AUTO_UPDATE=1
+export GOPROXY=https://goproxy.io,direct
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
