@@ -11,23 +11,12 @@ task :link do
     dot_fn = fn.gsub(/^_/, '.')
     sh "ln -nfs #{pwd}/#{fn} ~/#{dot_fn}"
   end
-  # link the misc files, according to the map.yml file
-  map_fn = 'misc/map.yml'
-  YAML::load_file(map_fn).each do |fn, target|
-    sh "mkdir -p #{File.dirname(target)}"
-    sh "ln -nfs #{pwd}/misc/#{fn} #{target}"
-  end
-  #
+  # link this dir to ~/.dotfiles
   sh "ln -nfs #{pwd} ~/.dotfiles"
 end
 
 task :chmod => :link do
   sh "chmod 755 ~/.dotfiles/scripts/*"
-end
-
-task :push do
-  sh "git commit -am ':trollface: updated at #{DateTime.now}'; true"
-  sh "git push origin master"
 end
 
 namespace :bs do
@@ -55,11 +44,5 @@ namespace :bs do
     sh "git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash || true"
     sh "rbenv install 2.1.0"
     sh "rbenv rehash"
-  end
-
-  task :py do
-    sh "curl -kL http://xrl.us/pythonbrewinstall | bash"
-    sh "pyvm install 3.2"
-    sh "pyvm use 3.2"
   end
 end

@@ -38,7 +38,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
-[ -f /usr/local/etc/profile.d/z.sh ] && source /usr/local/etc/profile.d/z.sh
+[ -f $HOME/.dotfiles/etc/z.sh ] && source $HOME/.dotfiles/etc/z.sh
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # loads wasmer
 
 export PYENV_VERSION='3.9.5'
