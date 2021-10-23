@@ -24,7 +24,8 @@ export PATH="./node_modules/.bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.arc/arcanist/bin:$PATH"
-export PATH="$HOME/code/fenbi-code-tool/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH=/opt/homebrew/opt/mysql-client@5.7/bin:$PATH
 
 # alias sudo="sudo env PATH=$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
@@ -34,8 +35,8 @@ export GOPROXY=https://goproxy.io,direct
 export GOPRIVATE=*.zhenguanyu.com
 
 # eval "$(rbenv init - zsh)"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f $HOME/.dotfiles/etc/z.sh ] && source $HOME/.dotfiles/etc/z.sh

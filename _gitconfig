@@ -17,6 +17,7 @@ whitespace = red reverse
 [core]
 excludesfile = ~/.gitignore
 attributesfile = ~/.gitattributes
+	editor = nvim
 
 [alias]
 st = status

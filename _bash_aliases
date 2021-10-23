@@ -1,12 +1,6 @@
 #!/bin/bash
 
 # for utils
-alias ls='ls --color=auto -X --group-directories-first'
-alias ll='ls -alF'
-alias la='ls -A'
-# alias df='df -hT'
-alias l='ls -CF'
-# alias open='gnome-open'
 alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
 alias vi='nvim'
 alias vim='nvim'
@@ -16,17 +10,10 @@ alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
 
-# alias s5proxy='HTTP_PROXY=s5socks://localhost:8081 HTTPS_PROXY=s5socks://localhost:8081'
-
-alias ..='cd ..'
-
 if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-    alias atom='open -a Atom'
     alias vsc="open -a 'Visual Studio Code'"
     alias mvim='open -a MacVim'
-    alias typora='open -a typora'
-    unalias open
 fi
