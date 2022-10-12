@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # for utils
-alias cdr='while [ ! -d .git ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
+alias cdr='while [ ! -d .git ] && [ ! -f go.sum ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
 alias vi='nvim'
 alias vim='nvim'
 alias vsc='code'
@@ -9,6 +9,7 @@ alias vsc='code'
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
+alias mysql='mysql --protocol=TCP'
 
 if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
@@ -16,4 +17,5 @@ if [ "$KERNEL" = 'Darwin' ]; then
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
     alias vsc="open -a 'Visual Studio Code'"
     alias mvim='open -a MacVim'
+    alias lsport="netstat -anvp tcp | awk 'NR<3 || /LISTEN/'"
 fi

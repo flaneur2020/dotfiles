@@ -28,3 +28,4 @@ cmd/debug
 .project
 .settings/
 .idea/
+.devcontainer

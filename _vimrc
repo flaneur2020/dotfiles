@@ -36,7 +36,7 @@ set ruler
 set hidden
 set showmatch
 set list
-set listchars=tab:>-     " > is shown at the beginning, - throughout
+" set listchars=tab:>     " > is shown at the beginning, - throughout
 set scrolloff=4
 
 " cd relative to the current file
@@ -72,7 +72,13 @@ match ExtraWhitespace /\s\+$/
 " fix the highlight about matching paren
 hi MatchParen cterm=bold ctermbg=none ctermfg=blue
 
+" tab complete at the first suggest
+inoremap <expr> <TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+
 " PLUGINS
+
+"
+let g:omni_sql_no_default_maps = 1
 
 " for NerdTree
 let NERDTreeIgnore = ['\env','\.vim$', '\~$', '\.pyc$', '\.o$', '\.swp$', '\.egg-info$', '^dist$', '^build$']
@@ -92,7 +98,6 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-css',
     \ 'coc-go',
-    \ 'coc-rls',
     \ 'coc-pyright',
     \ 'coc-clangd',
     \ ]
