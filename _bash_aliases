@@ -11,6 +11,9 @@ alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
 alias mysql='mysql --protocol=TCP'
 
+alias tsh-databend='tsh login --proxy=teleport.datafusecloud.com:443 databendcloud'
+alias tsh-databendcn='tsh login --proxy=teleport.databend.cn:443 databendcn'
+
 if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'

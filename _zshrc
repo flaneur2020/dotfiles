@@ -50,3 +50,4 @@ export PATH=$PATH:$HOME/.pulumi/bin
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

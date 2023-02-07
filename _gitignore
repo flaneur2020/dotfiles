@@ -29,3 +29,4 @@ cmd/debug
 .settings/
 .idea/
 .devcontainer
+~/code/evidence/yarn.lock
