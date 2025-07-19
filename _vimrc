@@ -151,6 +151,64 @@ require("lazy").setup({
     opts = {}
   },
 
+  -- LSP configuration
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      -- gopls configuration with gofumpt
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+            usePlaceholders = true,
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
+            -- Import organization and formatting
+            -- Use gofumpt for formatting (already set above)
+            -- Import organization happens automatically with gofumpt
+          },
+        },
+      })
+
+      -- Keymaps for LSP
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover" })
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format" })
+    end,
+  },
+
+  -- Auto-format on save
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      -- Auto-format on save for supported file types
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = { "*.go", "*.lua", "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html" },
+        callback = function(args)
+          vim.lsp.buf.format({ async = false })
+        end,
+      })
+    end,
+  },
+
   -- Fuzzy Finder (files, lsp, etc)
   {
     "nvim-telescope/telescope.nvim",
@@ -249,6 +307,9 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right win
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
+-- Split pane
+vim.keymap.set("n", "<C-\\>", "<C-w>v", { desc = "Split pane vertically" })
+
 -- File explorer
 vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Find current file in explorer" })
@@ -258,3 +319,5 @@ vim.api.nvim_create_user_command("NerdTreeToggle", "NvimTreeToggle", {})
 vim.api.nvim_create_user_command("NerdTree", "NvimTreeToggle", {})
 vim.api.nvim_create_user_command("NERDTreeToggle", "NvimTreeToggle", {})
 vim.api.nvim_create_user_command("NERDTree", "NvimTreeToggle", {})
+
+--
