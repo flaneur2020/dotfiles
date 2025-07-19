@@ -4,21 +4,23 @@
 alias cdr='while [ ! -d .git ] && [ ! -f go.sum ] && [ ! `pwd` = "/" ] && [ ! `pwd` = ~ ]; do cd ..; done;'
 alias vi='nvim'
 alias vim='nvim'
-alias vsc='code'
 
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
 alias mysql='mysql --protocol=TCP'
+alias chatmistral='~/code/crabml/target/release/crabml-cli -m ~/llm/mistral-7b-instruct-v0.1.Q4_0.gguf --mlock "you are a helpful assistant" --chat -T 4'
+alias chatllama3='~/code/crabml/target/release/crabml-cli -m ~/llm/llama3-8B-instruct.Q4_0.gguf --mlock "you are a helpful assistant" --chat -T 4'
 
-alias tsh-databend='tsh login --proxy=teleport.datafusecloud.com:443 databendcloud'
-alias tsh-databendcn='tsh login --proxy=teleport.databend.cn:443 databendcn'
+alias tsh-databend='tsh login --proxy=teleport.databend.com:443 global'
+alias tsh-databendcn='tsh login --proxy=teleport.databend.cn:443 china'
+alias mdtranslate="chatgpt-md-translator"
 
 if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-    alias vsc="open -a 'Visual Studio Code'"
+    alias vsc="open -a 'Cursor'"
     alias mvim='open -a MacVim'
     alias lsport="netstat -anvp tcp | awk 'NR<3 || /LISTEN/'"
 fi

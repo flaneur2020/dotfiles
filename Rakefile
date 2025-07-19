@@ -21,9 +21,7 @@ end
 
 namespace :bs do
   task :vim do
-    sh 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    sh 'ln -s ~/.vimrc ~/.config/nvim/init.vim'
-    sh 'vim +PlugInstall +qall'
+    sh 'ln -s ~/.vimrc ~/.config/nvim/init.lua'
   end
 
   task :zsh do

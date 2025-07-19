@@ -30,3 +30,6 @@ cmd/debug
 .idea/
 .devcontainer
 ~/code/evidence/yarn.lock
+main.log
+.vscode/settings.json
+.claude/
