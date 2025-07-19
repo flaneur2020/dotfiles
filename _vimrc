@@ -79,8 +79,6 @@ require("lazy").setup({
     end,
   },
 
-
-
   -- Autocompletion
   {
     "hrsh7th/nvim-cmp",
@@ -253,3 +251,9 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- File explorer
 vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Find current file in explorer" })
+
+-- Command aliases for NERDTree compatibility
+vim.api.nvim_create_user_command("NerdTreeToggle", "NvimTreeToggle", {})
+vim.api.nvim_create_user_command("NerdTree", "NvimTreeToggle", {})
+vim.api.nvim_create_user_command("NERDTreeToggle", "NvimTreeToggle", {})
+vim.api.nvim_create_user_command("NERDTree", "NvimTreeToggle", {})
