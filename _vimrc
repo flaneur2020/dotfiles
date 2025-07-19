@@ -177,9 +177,7 @@ require("lazy").setup({
               parameterNames = true,
               rangeVariableTypes = true,
             },
-            -- Import organization and formatting
-            -- Use gofumpt for formatting (already set above)
-            -- Import organization happens automatically with gofumpt
+            gofumpt = true,
           },
         },
       })
@@ -192,18 +190,26 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
       vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format" })
-    end,
-  },
 
-  -- Auto-format on save
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      -- Auto-format on save for supported file types
+      -- Auto-format on save
       vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.go", "*.lua", "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html" },
+        pattern = { "*.go", ".rs", "*.lua", "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html" },
         callback = function(args)
-          vim.lsp.buf.format({ async = false })
+          -- Check if LSP is attached and supports formatting
+          local clients = vim.lsp.get_clients({ bufnr = args.buf })
+          for _, client in pairs(clients) do
+            if client.name == "gopls" then
+              -- Organize imports using code action
+              vim.lsp.buf.code_action({
+                context = { only = { "source.organizeImports" } },
+                apply = true,
+              })
+            end
+            if client.supports_method("textDocument/formatting") then
+              vim.lsp.buf.format({ async = false })
+              break
+            end
+          end
         end,
       })
     end,
