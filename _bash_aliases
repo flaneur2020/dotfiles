@@ -9,11 +9,12 @@ alias vsc='code'
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
+alias k='kubectl'
 
 if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-    alias vsc="open -a 'Visual Studio Code'"
+    alias vsc="open -a 'Cursor'"
     alias mvim='open -a MacVim'
 fi
