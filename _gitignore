@@ -30,3 +30,7 @@ cmd/debug
 .idea/
 .claude/
 .opencode/
+.devcontainer
+main.log
+.vscode/settings.json
+.claude/

@@ -5,6 +5,9 @@ email = me.ssword@gmail.com
 [push]
 default = upstream
 
+[pull]
+rebase = false
+
 [color]
 branch = auto
 status = auto
@@ -27,7 +30,7 @@ br = branch
 c = commit -m
 co = checkout
 df = diff --cached
-ls = !"git ls-tree -r master | cut -f2"
+ls = !"git ls-tree -r main | cut -f2"
 mg = merge --no-ff
 mgg = merge
 lg = log -p
@@ -39,6 +42,7 @@ idiff = diff --color-words='[^[:space:]]+|.'
 idf = diff --cached --color-words='[^[:space:]]+|.'
 format-patch = "format-patch -s --coverletter"
 brr = !"git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | less"
+cleanup-branches = !"git branch | grep -v 'main\\|master' | xargs git branch -D"
 
 [tig "bind"]
 status = a status-update

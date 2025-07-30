@@ -24,8 +24,17 @@ export PATH="./node_modules/.bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.arc/arcanist/bin:$PATH"
+export PATH="$HOME/.pulumi/bin":$PATH
+
+# brea paths
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH=/opt/homebrew/opt/mysql-client@5.7/bin:$PATH
+export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/Cellar/nushell/0.43.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # alias sudo="sudo env PATH=$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
@@ -33,10 +42,12 @@ export WASMER_DIR="$HOME/.wasmer"
 export JAVA_HOME=$(/usr/libexec/java_home)
 export GOPROXY=https://goproxy.io,direct
 export GOPRIVATE=*.zhenguanyu.com
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # eval "$(rbenv init - zsh)"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 [ -f $HOME/.dotfiles/etc/z.sh ] && source $HOME/.dotfiles/etc/z.sh
@@ -48,6 +59,7 @@ export RBENV_VERSION=2.3.0
 export PIPENV_VENV_IN_PROJECT=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPROXY=https://goproxy.io,direct
+export VCPKG_ROOT="$HOME/vcpkg"
 
 [[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
