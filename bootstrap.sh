@@ -34,8 +34,7 @@ link_dotfiles() {
         "gitignore"
         "vimrc"
         "zshrc"
-        "env.sh"
-        "aliases.sh"
+        "zshrc.d"
     )
 
     # Link each dotfile
