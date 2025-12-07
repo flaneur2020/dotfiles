@@ -1,4 +1,0 @@
-#/bin/bash
-gcc $* -g -o /tmp/a.out
-/tmp/a.out
- 

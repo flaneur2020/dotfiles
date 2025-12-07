@@ -1,5 +1,0 @@
-#!/bin/sh
-
-killall autossh
-autossh -M 2000 -v -N gfw -D 127.0.0.1:7070
-
