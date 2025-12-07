@@ -26,8 +26,9 @@ plugins=(git golang gnu-utils zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.zsh_env.sh
-source ~/.zsh_aliases.sh
+[[ -s $HOME/.env.sh ]] && source ~/.env.sh
+[[ -s $HOME/.aliases.sh ]] && source ~/.aliases.sh
+[[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
 
 # eval "$(starship init zsh)"
 

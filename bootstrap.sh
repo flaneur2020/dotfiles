@@ -34,14 +34,14 @@ link_dotfiles() {
         "gitignore"
         "vimrc"
         "zshrc"
-        "zsh_env.sh"
-        "zsh_aliases.sh"
+        "env.sh"
+        "aliases.sh"
     )
 
     # Link each dotfile
     for file in "${files[@]}"; do
-        ln -nfs "${DOTFILES_DIR}/_${file}" "$HOME/.${file}"
-        info "Linked: _${file} -> ~/.${file}"
+        ln -nfs "${DOTFILES_DIR}/${file}" "$HOME/.${file}"
+        info "Linked: ${file} -> ~/.${file}"
     done
 
     # Link dotfiles directory itself
@@ -55,9 +55,9 @@ bootstrap_vim() {
     # Create neovim config directory
     mkdir -p "$HOME/.config/nvim"
 
-    # Link _vimrc to init.lua
-    ln -sf "${DOTFILES_DIR}/_vimrc" "$HOME/.config/nvim/init.lua"
-    info "Linked: _vimrc -> ~/.config/nvim/init.lua"
+    # Link vimrc to init.lua
+    ln -sf "${DOTFILES_DIR}/vimrc" "$HOME/.config/nvim/init.lua"
+    info "Linked: vimrc -> ~/.config/nvim/init.lua"
 
     # Check if neovim is installed
     if ! command -v nvim &> /dev/null; then

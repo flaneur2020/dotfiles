@@ -13,15 +13,15 @@ I just realized that all i need is simply neovim, zsh, git, and nothing else in 
 This will:
 
 - Link the dotfiles for zsh, git, neovim.
-- Install packages (zsh, neovim, git, etc.)
+- Install packages (zsh, neovim, git, tig, etc.)
 - Setup Neovim with plugins
 - Setup zsh with oh-my-zsh
 
 ## Files
 
-- `_zshrc` → `~/.zshrc`
-- `_zsh_env.sh` → `~/.zsh_env.sh`
-- `_zsh_aliases.sh` → `~/.zsh_aliases.sh`
-- `_vimrc` → `.vimrc` and `~/.config/nvim/init.lua`
-- `_gitconfig` → `~/.gitconfig`
-- `_gitignore` → `~/.gitignore`
+- `zshrc` → `~/.zshrc`
+- `env.sh` → `~/.env.sh`
+- `aliases.sh` → `~/.aliases.sh`
+- `vimrc` → `~/.vimrc` and `~/.config/nvim/init.lua`
+- `gitconfig` → `~/.gitconfig`
+- `gitignore` → `~/.gitignore`
