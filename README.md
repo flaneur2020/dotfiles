@@ -1,25 +1,27 @@
 # dotfiles
 
-The dotfiles and some bootstrap scripts for fleuria. rake is required.
+Personal dotfiles and bootstrap script.
 
-to link all the dotfiles:
+I just realized that all i need is simply neovim, zsh, git, and nothing else in my dotfiles 🤔.
 
-    rake link
+## Usage
 
-to install the utilities:
+```bash
+./bootstrap.sh
+```
 
-    sudo apt-get install rake
-    rake bs:ubuntu
+This will:
 
-to setup ruby:
+- Link the dotfiles for zsh, git, neovim.
+- Install packages (zsh, neovim, git, etc.)
+- Setup Neovim with plugins
+- Setup zsh with oh-my-zsh
 
-    rake bs:ruby
+## Files
 
-to setup vim:
-
-    rake bs:vim
-
-to keep sync with github:
-
-    rake push
-
+- `_zshrc` → `~/.zshrc`
+- `_zsh_env.sh` → `~/.zsh_env.sh`
+- `_zsh_aliases.sh` → `~/.zsh_aliases.sh`
+- `_vimrc` → `.vimrc` and `~/.config/nvim/init.lua`
+- `_gitconfig` → `~/.gitconfig`
+- `_gitignore` → `~/.gitignore`
