@@ -7,7 +7,6 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Colors for output
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # ============================================================================
@@ -22,10 +21,6 @@ warn() {
     echo -e "${YELLOW}Warning:${NC} $1"
 }
 
-debug() {
-    echo -e "${BLUE}   $1${NC}"
-}
-
 # ============================================================================
 # Core Functions
 # ============================================================================
@@ -35,24 +30,23 @@ link_dotfiles() {
 
     # Explicit list of dotfiles to link
     local files=(
-        "bash_aliases"
-        "bash_common"
-        "bashrc"
         "gitconfig"
         "gitignore"
         "vimrc"
         "zshrc"
+        "zsh_env.sh"
+        "zsh_aliases.sh"
     )
 
     # Link each dotfile
     for file in "${files[@]}"; do
         ln -nfs "${DOTFILES_DIR}/_${file}" "$HOME/.${file}"
-        debug "Linked: _${file} -> ~/.${file}"
+        info "Linked: _${file} -> ~/.${file}"
     done
 
     # Link dotfiles directory itself
     ln -nfs "$DOTFILES_DIR" "$HOME/.dotfiles"
-    debug "Linked: $(basename $DOTFILES_DIR) -> ~/.dotfiles"
+    info "Linked: $(basename $DOTFILES_DIR) -> ~/.dotfiles"
 }
 
 bootstrap_vim() {
@@ -63,7 +57,7 @@ bootstrap_vim() {
 
     # Link _vimrc to init.lua
     ln -sf "${DOTFILES_DIR}/_vimrc" "$HOME/.config/nvim/init.lua"
-    debug "Linked: _vimrc -> ~/.config/nvim/init.lua"
+    info "Linked: _vimrc -> ~/.config/nvim/init.lua"
 
     # Check if neovim is installed
     if ! command -v nvim &> /dev/null; then
@@ -74,7 +68,7 @@ bootstrap_vim() {
     # Initialize neovim to install lazy.nvim and plugins
     info "Initializing Neovim plugins (this may take a while)..."
     nvim --headless "+Lazy! sync" +qa
-    debug "Neovim plugins initialized"
+    info "Neovim plugins initialized"
 }
 
 bootstrap_zsh() {
@@ -82,18 +76,18 @@ bootstrap_zsh() {
 
     # Install oh-my-zsh
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        debug "Installing oh-my-zsh..."
+        info "Installing oh-my-zsh..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
-        debug "oh-my-zsh installed"
+        info "oh-my-zsh installed"
     else
         warn "oh-my-zsh already installed, skipping"
     fi
 
     # Install zsh-z plugin
     if [ ! -d "$HOME/.oh-my-zsh/plugins/zsh-z" ]; then
-        debug "Installing zsh-z plugin..."
+        info "Installing zsh-z plugin..."
         git clone https://github.com/agkozak/zsh-z "$HOME/.oh-my-zsh/plugins/zsh-z"
-        debug "zsh-z plugin installed"
+        info "zsh-z plugin installed"
     else
         warn "zsh-z plugin already installed, skipping"
     fi
@@ -111,11 +105,13 @@ install_packages_ubuntu() {
         openssl
         curl
         git-core
+        zsh
+        neovim
     )
 
     sudo apt-get update
     sudo apt-get install -y "${packages[@]}"
-    debug "Ubuntu packages installed"
+    info "Ubuntu packages installed"
 }
 
 install_packages_macos() {
@@ -131,10 +127,12 @@ install_packages_macos() {
         openssl
         curl
         git
+        zsh
+        neovim
     )
 
     brew install "${packages[@]}"
-    debug "Homebrew packages installed"
+    info "Homebrew packages installed"
 }
 
 # ============================================================================
@@ -145,7 +143,7 @@ detect_and_install_packages() {
     info "Detecting operating system..."
 
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        debug "Detected: Linux"
+        info "Detected: Linux"
 
         if command -v apt-get &> /dev/null; then
             install_packages_ubuntu
@@ -154,7 +152,7 @@ detect_and_install_packages() {
         fi
 
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        debug "Detected: macOS"
+        info "Detected: macOS"
         install_packages_macos
 
     else

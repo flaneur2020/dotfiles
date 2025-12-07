@@ -61,7 +61,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export GOPROXY=https://goproxy.io,direct
 export VCPKG_ROOT="$HOME/vcpkg"
 
-[[ -s $HOME/.bash_aliases ]] && source ~/.bash_aliases
+[[ -s $HOME/.zsh_aliases.sh ]] && source ~/.zsh_aliases.sh
 [[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
 
 ssh-add ~/.ssh/id_rsa 2> /dev/null
