@@ -25,3 +25,4 @@ cmd/debug
 main.log
 .vscode/settings.json
 .claude/
+.crush/
