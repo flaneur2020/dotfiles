@@ -40,7 +40,7 @@ link_dotfiles() {
     # Link each dotfile
     for file in "${files[@]}"; do
         ln -nfs "${DOTFILES_DIR}/${file}" "$HOME/.${file}"
-        info "Linked: ${file} -> ~/.${file}"
+        info "Linked: ${DOTFILES_DIR}/${file} -> ~/.${file}"
     done
 
     # Link dotfiles directory itself
