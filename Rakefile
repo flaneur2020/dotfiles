@@ -35,12 +35,4 @@ namespace :bs do
     }
     sh "sudo apt-get install #{packages * ' '}"
   end
-
-  task :rbenv do
-    sh "git clone https://github.com/sstephenson/rbenv.git ~/.rbenv || true"
-    sh "git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build || true"
-    sh "git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash || true"
-    sh "rbenv install 2.1.0"
-    sh "rbenv rehash"
-  end
 end
