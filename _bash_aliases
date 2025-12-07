@@ -8,13 +8,13 @@ alias vim='nvim'
 alias untar-gz='tar xvfz'
 alias untar-bz2='tar xvfj'
 alias untar='tar xvf'
+alias k='kubectl'
 alias mysql='mysql --protocol=TCP'
 alias chatmistral='~/code/crabml/target/release/crabml-cli -m ~/llm/mistral-7b-instruct-v0.1.Q4_0.gguf --mlock "you are a helpful assistant" --chat -T 4'
 alias chatllama3='~/code/crabml/target/release/crabml-cli -m ~/llm/llama3-8B-instruct.Q4_0.gguf --mlock "you are a helpful assistant" --chat -T 4'
 
 alias tsh-databend='tsh login --proxy=teleport.databend.com:443 global'
 alias tsh-databendcn='tsh login --proxy=teleport.databend.cn:443 china'
-alias mdtranslate="chatgpt-md-translator"
 
 if [ "$KERNEL" = 'Darwin' ]; then
     # brew install coreutils
