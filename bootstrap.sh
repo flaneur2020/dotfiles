@@ -105,6 +105,7 @@ install_packages_ubuntu() {
         openssl
         curl
         git-core
+        tig
         zsh
         neovim
     )
@@ -127,6 +128,7 @@ install_packages_macos() {
         openssl
         curl
         git
+        tig
         zsh
         neovim
     )

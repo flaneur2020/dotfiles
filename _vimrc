@@ -163,11 +163,10 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       -- gopls configuration with gofumpt
-      lspconfig.gopls.setup({
+      vim.lsp.config.gopls = {
         capabilities = capabilities,
         settings = {
           gopls = {
@@ -185,13 +184,13 @@ require("lazy").setup({
               parameterNames = true,
               rangeVariableTypes = true,
             },
-            gofumpt = true,
           },
         },
-      })
+      }
+      vim.lsp.enable('gopls')
 
       -- rust-analyzer configuration
-      lspconfig.rust_analyzer.setup({
+      vim.lsp.config.rust_analyzer = {
         capabilities = capabilities,
         settings = {
           ["rust-analyzer"] = {
@@ -212,10 +211,11 @@ require("lazy").setup({
             },
           },
         },
-      })
+      }
+      vim.lsp.enable('rust_analyzer')
 
       -- BZL LSP configuration for .fizz files
-      lspconfig.bzl.setup({
+      vim.lsp.config.bzl = {
         capabilities = capabilities,
         filetypes = { "bzl", "starlark" },
         settings = {
@@ -231,7 +231,8 @@ require("lazy").setup({
             },
           },
         },
-      })
+      }
+      vim.lsp.enable('bzl')
 
       -- Keymaps for LSP
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
