@@ -2,7 +2,7 @@
 
 set -e  # Exit on error
 
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
 # Colors for output
 GREEN='\033[0;32m'
