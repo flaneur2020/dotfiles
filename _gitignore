@@ -33,3 +33,5 @@ cmd/debug
 main.log
 .vscode/settings.json
 .claude/
+.opencode/
+.crush/

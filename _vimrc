@@ -22,7 +22,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
@@ -38,8 +38,8 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -72,13 +72,21 @@ require("lazy").setup({
         renderer = {
           icons = {
             show = {
-              folder = false,
-              file = false,
-              git = false,
-              folder_arrow = false,
+              folder = true,
+              file = true,
+              git = true,
+              folder_arrow = true,
             },
           },
         },
+        on_attach = function(bufnr)
+          local api = require("nvim-tree.api")
+          local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+          end
+          api.config.mappings.default_on_attach(bufnr)
+          vim.keymap.set('n', 'x', api.node.navigate.parent_close, opts('Collapse current directory'))
+        end,
       })
     end,
   },
@@ -182,6 +190,49 @@ require("lazy").setup({
         },
       })
 
+      -- rust-analyzer configuration
+      lspconfig.rust_analyzer.setup({
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              command = "clippy",
+            },
+            cargo = {
+              allFeatures = true,
+            },
+            procMacro = {
+              enable = true,
+            },
+            lens = {
+              enable = true,
+            },
+            diagnostics = {
+              enable = true,
+            },
+          },
+        },
+      })
+
+      -- BZL LSP configuration for .fizz files
+      lspconfig.bzl.setup({
+        capabilities = capabilities,
+        filetypes = { "bzl", "starlark" },
+        settings = {
+          bzl = {
+            diagnostics = {
+              enable = true,
+            },
+            completion = {
+              enable = true,
+            },
+            hover = {
+              enable = true,
+            },
+          },
+        },
+      })
+
       -- Keymaps for LSP
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
       vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -193,7 +244,7 @@ require("lazy").setup({
 
       -- Auto-format on save
       vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.go", ".rs", "*.lua", "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html" },
+        pattern = { "*.go", "*.rs", "*.lua", "*.js", "*.ts", "*.jsx", "*.tsx", "*.json", "*.css", "*.scss", "*.html" },
         callback = function(args)
           -- Check if LSP is attached and supports formatting
           local clients = vim.lsp.get_clients({ bufnr = args.buf })
@@ -255,7 +306,7 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-      ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "vim", "vimdoc" },
+      ensure_installed = { "bash", "c", "diff", "html", "lua", "luadoc", "markdown", "vim", "vimdoc", "starlark" },
       auto_install = true,
       highlight = {
         enable = true,
@@ -293,6 +344,14 @@ require("lazy").setup({
       })
     end,
   },
+})
+
+-- Filetype detection for .fizz files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.fizz",
+  callback = function()
+    vim.bo.filetype = "starlark"
+  end,
 })
 
 -- Key mappings
@@ -334,6 +393,8 @@ vim.keymap.set("n", "<C-\\>", "<C-w>v", { desc = "Split pane vertically" })
 -- File explorer
 vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
 vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>", { desc = "Find current file in explorer" })
+
+
 
 -- Command aliases for NERDTree compatibility
 vim.api.nvim_create_user_command("NerdTreeToggle", "NvimTreeToggle", {})
