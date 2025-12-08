@@ -45,3 +45,6 @@ setopt nomenucomplete
 . "$HOME/.cargo/env"
 . "$HOME/.local/bin/env"
 
+
+# Added by Windsurf
+export PATH="/Users/yazhou/.codeium/windsurf/bin:$PATH"
