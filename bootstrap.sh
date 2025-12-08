@@ -140,7 +140,7 @@ install_packages_macos() {
 # OS Detection and Dispatch
 # ============================================================================
 
-detect_and_install_packages() {
+install_packages() {
     info "Detecting operating system..."
 
     if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -170,7 +170,7 @@ main() {
     info "Starting dotfiles bootstrap..."
 
     # OS-specific package installation
-    detect_and_install_packages
+    install_packages
 
     # Core setup
     link_dotfiles
