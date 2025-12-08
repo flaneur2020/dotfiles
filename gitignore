@@ -26,3 +26,5 @@ main.log
 .vscode/settings.json
 .claude/
 .crush/
+.agent/
+obsidian/Documents/.obsidian/

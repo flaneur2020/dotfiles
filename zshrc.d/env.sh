@@ -17,7 +17,7 @@ export PATH=$HOME/bin:$PATH
 export GOPATH=$HOME/go
 export GOROOT_BOOTSTRAP=$GOROOT
 export GOPROXY=https://goproxy.cn,direct
-export GOPRIVATE=*.zhenguanyu.com
+export GOPRIVATE=*.siliconflow.com,github.com/siliconflow/*
 export PATH=$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
 
 # Python
