@@ -20,7 +20,7 @@ whitespace = red reverse
 [core]
 excludesfile = ~/.gitignore
 attributesfile = ~/.gitattributes
-	editor = nvim
+editor = nvim
 
 [alias]
 st = status
@@ -55,4 +55,4 @@ smtpserver = smtp.gmail.com
 from = Li Yazhou <me.ssword@gmail.com>
 
 [credential]
-	helper = osxkeychain
+helper = osxkeychain
