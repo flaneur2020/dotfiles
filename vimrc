@@ -19,7 +19,8 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.wrap = false
+vim.opt.relativenumber = false
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 -- vim.opt.clipboard = "unnamedplus"

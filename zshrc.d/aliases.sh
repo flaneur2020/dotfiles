@@ -16,7 +16,7 @@ alias chatllama3='~/code/crabml/target/release/crabml-cli -m ~/llm/llama3-8B-ins
 alias tsh-databend='tsh login --proxy=teleport.databend.com:443 global'
 alias tsh-databendcn='tsh login --proxy=teleport.databend.cn:443 china'
 
-if [ "$KERNEL" = 'Darwin' ]; then
+if [[ "$OSTYPE" == "darwin"* ]]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
