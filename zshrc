@@ -26,21 +26,18 @@ plugins=(git golang gnu-utils zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
-[[ -s $HOME/.zshrc.d/env.sh ]] && source ~/.zshrc.d/env.sh
-[[ -s $HOME/.zshrc.d/aliases.sh ]] && source ~/.zshrc.d/aliases.sh
-[[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
-
-# eval "$(starship init zsh)"
-
 # make tab more bash-like: https://serverfault.com/questions/109207/how-do-i-make-zsh-completion-act-more-like-bash-completion
 setopt noautomenu
 setopt nomenucomplete
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Include my custom scripts
+[[ -s $HOME/.zshrc.d/env.sh ]] && source $HOME/.zshrc.d/env.sh
+[[ -s $HOME/.zshrc.d/aliases.sh ]] && source $HOME/.zshrc.d/aliases.sh
+[[ -s $HOME/.zshrc.d/local.sh ]] && source $HOME/.zshrc.d/local.sh
+[[ -s $HOME/.bash_profile.local ]] && source $HOME/.bash_profile.local
 
-# make ctrl-left/right mv words back & forth
-#bindkey '^[[1;5C' forward-word
-# bindkey '^[[1;5D' backward-word
-
-. "$HOME/.cargo/env"
-. "$HOME/.local/bin/env"
+# Include init script from tools
+# eval "$(starship init zsh)"
+[[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
+[[ -s $HOME/.cargo/env ]] && source $HOME/.cargo/env
+[[ -s $HOME/.local/bin/env ]] && source $HOME/.local/bin/env
