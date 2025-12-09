@@ -44,6 +44,9 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 export VCPKG_ROOT="$HOME/vcpkg"
 
+# Windsurf
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
 # Other Tools
 export WASMER_DIR="$HOME/.wasmer"
 export HOMEBREW_NO_AUTO_UPDATE=1
