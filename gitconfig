@@ -56,3 +56,6 @@ from = Li Yazhou <me.ssword@gmail.com>
 
 [credential]
 helper = osxkeychain
+
+[url "git@github.com:"]
+insteadOf = https://github.com/
