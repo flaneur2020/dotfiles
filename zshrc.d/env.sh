@@ -36,7 +36,7 @@ export PATH=$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 # C/C++ Build
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
