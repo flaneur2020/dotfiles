@@ -28,3 +28,4 @@ main.log
 .crush/
 .agent/
 obsidian/Documents/.obsidian/
+__pycache__/
