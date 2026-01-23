@@ -10,7 +10,7 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 # PATH
-export PATH=/usr/local/bin:/opt/homebrew/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 export PATH=$HOME/bin:$PATH
 
 # Go
