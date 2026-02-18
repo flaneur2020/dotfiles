@@ -15,10 +15,11 @@ export PATH=$HOME/bin:$PATH
 
 # Go
 export GOPATH=$HOME/go
+export GOROOT=/opt/homebrew/opt/go/libexec
 export GOROOT_BOOTSTRAP=$GOROOT
 export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=*.siliconflow.com,github.com/siliconflow/*
-export PATH=$GOPATH/bin:/usr/local/opt/go/libexec/bin:$PATH
+export PATH=$GOPATH/bin:$GOROOT/bin:/opt/homebrew/bin:$PATH
 
 # Python
 export PYENV_VERSION='3.13.3'

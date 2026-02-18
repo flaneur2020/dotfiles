@@ -20,7 +20,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-    alias vsc="open -a 'Cursor'"
+    alias vsc="open -a 'Windsurf'"
     alias mvim='open -a MacVim'
     alias lsport="netstat -anvp tcp | awk 'NR<3 || /LISTEN/'"
 fi

@@ -41,3 +41,7 @@ setopt nomenucomplete
 [[ -f $HOME/.fzf.zsh ]] && source $HOME/.fzf.zsh
 [[ -s $HOME/.cargo/env ]] && source $HOME/.cargo/env
 [[ -s $HOME/.local/bin/env ]] && source $HOME/.local/bin/env
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+export LIBCLANG_PATH="/opt/homebrew/opt/llvm/lib"

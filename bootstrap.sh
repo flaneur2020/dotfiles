@@ -99,18 +99,17 @@ bootstrap_zsh() {
 install_packages_ubuntu() {
     info "Installing Ubuntu/Debian packages..."
 
-    packages=(
-        build-essential
-        openssl
-        curl
-        git-core
-        tig
-        zsh
-        neovim
-    )
-
     sudo apt-get update
-    sudo apt-get install -y "${packages[@]}"
+    sudo apt-get install -y \
+        build-essential \
+        openssl \
+        curl \
+        git-core \
+        tig \
+        zsh
+
+    sudo snap install neovim --classic
+
     info "Ubuntu packages installed"
 }
 
