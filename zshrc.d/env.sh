@@ -25,8 +25,8 @@ export PATH=$GOPATH/bin:$GOROOT/bin:/opt/homebrew/bin:$PATH
 export PYENV_VERSION='3.13.3'
 export PIPENV_VENV_IN_PROJECT=1
 export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
-[[ command -v pyenv ]] && eval "$(pyenv init -)"
-[[ command -v pyenv ]] && eval "$(pyenv virtualenv-init -)"
+[[ $(command -v pyenv) ]] && eval "$(pyenv init -)"
+[[ $(command -v pyenv) ]] && eval "$(pyenv virtualenv-init -)"
 
 # Ruby
 export RBENV_VERSION=2.3.0
