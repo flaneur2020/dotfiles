@@ -70,6 +70,17 @@ bootstrap_vim() {
     info "Neovim plugins initialized"
 }
 
+bootstrap_ghostty() {
+    info "Bootstrapping ghostty..."
+
+    # Create ghostty config directory
+    mkdir -p "$HOME/.config/ghostty"
+
+    # Link ghosttyrc to config
+    ln -sf "${DOTFILES_DIR}/ghosttyrc" "$HOME/.config/ghostty/config"
+    info "Linked: ghosttyrc -> ~/.config/ghostty/config"
+}
+
 bootstrap_zsh() {
     info "Bootstrapping zsh with oh-my-zsh..."
 
@@ -176,8 +187,8 @@ main() {
 
     # Shell and editor setup
     bootstrap_vim
+    bootstrap_ghostty
     bootstrap_zsh
-
 
     info "Bootstrap completed!"
 }
