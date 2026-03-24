@@ -22,7 +22,7 @@ export GOPRIVATE=*.siliconflow.com,github.com/siliconflow/*
 export PATH=$GOPATH/bin:$GOROOT/bin:/opt/homebrew/bin:$PATH
 
 # Python
-export PYENV_VERSION='3.13.3'
+# export PYENV_VERSION='3.13.3'
 export PIPENV_VENV_IN_PROJECT=1
 export PATH=$HOME/.pyenv/bin:$HOME/.pyenv/shims:$PATH
 [[ $(command -v pyenv) ]] && eval "$(pyenv init -)"

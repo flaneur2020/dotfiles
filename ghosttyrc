@@ -1,0 +1,10 @@
+# Keybindings for window splits
+keybind = cmd+backslash=new_split:right
+keybind = cmd+equal=new_split:down
+
+# Theme
+theme = Dark Pastel
+
+# alt-delete to delete word
+macos-option-as-alt = left
+
