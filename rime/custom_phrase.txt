@@ -1,0 +1,9 @@
+# 由 import_mac_text_substitutions.sh 从 macOS 文本替换导出
+# 格式: 词组<TAB>编码<TAB>权重；权重越大越靠前
+马上到！	msd	100
+✪ω✪	qb	100
+❤	xin	100
+_(:3ゝ∠)_	pa	100
+On my way!	omw	100
+😲	shock	100
+🤔	think	100

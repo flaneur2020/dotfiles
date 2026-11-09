@@ -92,6 +92,43 @@ bootstrap_zed() {
     info "Linked: zedkeymap.json -> ~/.config/zed/keymap.json"
 }
 
+bootstrap_rime() {
+    info "Bootstrapping Rime input method..."
+
+    # Rime user data dir differs by platform:
+    #   macOS  (Squirrel):  ~/Library/Rime
+    #   Linux  (fcitx5):    ~/.local/share/fcitx5/rime
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        local rime_dir="$HOME/Library/Rime"
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        local rime_dir="$HOME/.local/share/fcitx5/rime"
+    else
+        warn "Unsupported OS for Rime: $OSTYPE, skipping"
+        return
+    fi
+
+    # Create rime config directory
+    mkdir -p "$rime_dir"
+
+    # Link managed config files common to all platforms
+    local rime_files=(
+        "custom_phrase.txt"
+        "default.custom.yaml"
+        "luna_pinyin.custom.yaml"
+        "rime.lua"
+    )
+    for file in "${rime_files[@]}"; do
+        ln -sf "${DOTFILES_DIR}/rime/${file}" "${rime_dir}/${file}"
+        info "Linked: rime/${file} -> ${rime_dir}/${file}"
+    done
+
+    # Squirrel (macOS) appearance/app-level options; not portable to other platforms
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        ln -sf "${DOTFILES_DIR}/rime/squirrel.custom.yaml" "${rime_dir}/squirrel.custom.yaml"
+        info "Linked: rime/squirrel.custom.yaml -> ${rime_dir}/squirrel.custom.yaml"
+    fi
+}
+
 bootstrap_zsh() {
     info "Bootstrapping zsh with oh-my-zsh..."
 
@@ -200,6 +237,7 @@ main() {
     bootstrap_vim
     bootstrap_ghostty
     bootstrap_zed
+    bootstrap_rime
     bootstrap_zsh
 
     info "Bootstrap completed!"

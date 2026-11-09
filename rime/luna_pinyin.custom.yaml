@@ -1,0 +1,28 @@
+# luna_pinyin.custom.yaml
+# 对 luna_pinyin / luna_pinyin_simp 方案的定制
+patch:
+  # 挂载 lua translator：当输入以大写字母开头且含数字时（如 K8s、A100），
+  # 生成「原样 / 全小写 / 全大写」三个候选，可用数字键/空格挑选。
+  # recognizer 的 uppercase pattern（默认启用，来自 default.yaml）负责
+  # 让大写字母开头的整串被接管，使其中的数字不被当作选词键。
+
+  engine/translators/@next: lua_translator@mixed_case_translator
+
+  # 修正标点：# 在 luna_pinyin_simp（经 symbols.yaml 导入）的 half_shape 里被映射成
+  # 候选列表 ['#', №]，导致连续输入 ## 时第二个 # 会把候选切换到 № 再上屏。
+  # 改为直接输出原样字符，保证 ##、###、#### 等 markdown 标题标记原样输出。
+  #
+  # 写法说明（关键坑点）：
+  # - 不能用路径式 punctuator/half_shape/'#'，Rime 会把引号当作 key 的一部分，
+  #   生成字面 key "'#'"，匹配不上真正的 #。
+  # - 不能用 {commit: '#'}，与原 list 类型不兼容，会导致整个 schema build 失败。
+  # - 正解：用 /+ 后缀把 value 合并进 punctuator（而非整体覆盖），
+  #   value 里的 '#' 作为 mapping 子 key 按 YAML 规则解析为标点字符，
+  #   以字符串 '#' 整体覆盖原的 ['#', №]。
+  punctuator/+:
+    half_shape:
+      '#': '#'
+      # / 原本映射成候选列表 [、, ､, /, ／, ÷]，连按 // 会循环到下一个候选。
+      # 改为直接上屏原样 /，保证 //、/// 等 markdown 或代码用法原样输出。
+      # 中文顿号「、」仍可由反斜杠 \ 上屏（见 symbols.yaml half_shape 的 \ 映射）。
+      '/': '/'

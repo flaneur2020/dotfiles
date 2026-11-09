@@ -16,6 +16,7 @@ This will:
 - Install packages (zsh, neovim, git, tig, etc.)
 - Setup Neovim with plugins
 - Setup zsh with oh-my-zsh
+- Setup Rime input method (Squirrel on macOS, fcitx5-rime on Linux)
 
 ## Files
 
@@ -25,3 +26,4 @@ This will:
 - `vimrc` → `~/.vimrc` and `~/.config/nvim/init.lua`
 - `gitconfig` → `~/.gitconfig`
 - `gitignore` → `~/.gitignore`
+- `rime/` → `~/Library/Rime` (macOS Squirrel) or `~/.local/share/fcitx5/rime` (Linux fcitx5). `squirrel.custom.yaml` is macOS-only.
