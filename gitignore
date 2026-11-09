@@ -29,3 +29,4 @@ main.log
 .agent/
 obsidian/Documents/.obsidian/
 __pycache__/
+*.swp
