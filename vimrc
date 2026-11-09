@@ -354,6 +354,23 @@ require("lazy").setup({
       })
     end,
   },
+
+  -- Git diff signs (gutter marks for added/changed/removed lines)
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      signs = {
+        add = { text = "+" },
+        change = { text = "~" },
+        delete = { text = "_" },
+        topdelete = { text = "‾" },
+        changedelete = { text = "~" },
+      },
+      signcolumn = true, -- show signs in the gutter
+      numhl = true, -- also highlight git status on line numbers
+      current_line_blame = false, -- set true to show blame info inline
+    },
+  },
 })
 
 -- Filetype detection for .fizz files

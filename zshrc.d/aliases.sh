@@ -12,6 +12,7 @@ alias k='kubectl'
 alias mysql='mysql --protocol=TCP'
 alias chatmistral='~/code/crabml/target/release/crabml-cli -m ~/llm/mistral-7b-instruct-v0.1.Q4_0.gguf --mlock "you are a helpful assistant" --chat -T 4'
 alias chatllama3='~/code/crabml/target/release/crabml-cli -m ~/llm/llama3-8B-instruct.Q4_0.gguf --mlock "you are a helpful assistant" --chat -T 4'
+alias cdtoday='mkdir -p ~/tmp/$(date +%Y-%m-%d) && cd ~/tmp/$(date +%Y-%m-%d)'
 
 alias tsh-databend='tsh login --proxy=teleport.databend.com:443 global'
 alias tsh-databendcn='tsh login --proxy=teleport.databend.cn:443 china'
@@ -20,7 +21,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # brew install coreutils
     alias ls='gls --color -h --group-directories-first --ignore={"*.pyc","__pycache__"}'
     # alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
-    alias vsc="open -a 'Cursor'"
+    alias vsc="open -a 'WindSurf'"
     alias mvim='open -a MacVim'
     alias lsport="netstat -anvp tcp | awk 'NR<3 || /LISTEN/'"
 fi

@@ -81,6 +81,17 @@ bootstrap_ghostty() {
     info "Linked: ghosttyrc -> ~/.config/ghostty/config"
 }
 
+bootstrap_zed() {
+    info "Bootstrapping Zed editor..."
+
+    # Create zed config directory
+    mkdir -p "$HOME/.config/zed"
+
+    # Link keymap
+    ln -nfs "${DOTFILES_DIR}/zedkeymap.json" "$HOME/.config/zed/keymap.json"
+    info "Linked: zedkeymap.json -> ~/.config/zed/keymap.json"
+}
+
 bootstrap_zsh() {
     info "Bootstrapping zsh with oh-my-zsh..."
 
@@ -188,6 +199,7 @@ main() {
     # Shell and editor setup
     bootstrap_vim
     bootstrap_ghostty
+    bootstrap_zed
     bootstrap_zsh
 
     info "Bootstrap completed!"

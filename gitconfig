@@ -43,6 +43,7 @@ idf = diff --cached --color-words='[^[:space:]]+|.'
 format-patch = "format-patch -s --coverletter"
 brr = !"git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' | less"
 cleanup-branches = !"git branch | grep -v 'main\\|master' | xargs git branch -D"
+cob = "!f() { name=$(shuf -n 2 /usr/share/dict/words | tr '\\n' '-' | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z-]//g' | sed 's/-$//'); git checkout -b \"$name\"; }; f"
 
 [tig "bind"]
 status = a status-update
@@ -59,3 +60,8 @@ helper = osxkeychain
 
 [url "git@github.com:"]
 insteadOf = https://github.com/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
