@@ -24,6 +24,21 @@ patch:
   # （代价是 twitter.com 又会变成「台湾。」）。
   recognizer/patterns/url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].*$"
 
+  # 让 ü 用 u 或 v 都能打出来（lü/nü、lüe/nüe）
+  #
+  # - ve → ue：celve/celue、lve/lue、nve/nue 都能命中。
+  #   luna_pinyin 自带一条同名的 ve → ue 规则，但带 /correction 标记，
+  #   纠错拼写会被降权，所以 celue 的「策略」排在「侧录额」后面；
+  #   这里再补一条不带标记的，celue 的「策略」、lue 的「略」、nue 的「虐」
+  #   就会排到第一位。
+  # - v → u：lv/lu 都能出「吕」，nv/nu 都能出「女」（nu 仍保留「怒」等候选）。
+  #
+  # 没有加反方向的 u → v（lu/nu → lv/nv），否则「lv」的第一位会变成「路」；
+  # 确实需要时自己加一行：- derive/^([nl])u$/$1v/
+  "speller/algebra/+":
+    - derive/^([nl])ve$/$1ue/
+    - derive/^([nl])v$/$1u/
+
   # 修正标点：# 在 luna_pinyin_simp（经 symbols.yaml 导入）的 half_shape 里被映射成
   # 候选列表 ['#', №]，导致连续输入 ## 时第二个 # 会把候选切换到 № 再上屏。
   # 改为直接输出原样字符，保证 ##、###、#### 等 markdown 标题标记原样输出。
