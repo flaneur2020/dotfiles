@@ -8,6 +8,22 @@ patch:
 
   engine/translators/@next: lua_translator@mixed_case_translator
 
+  # 网址原样输入（twitter.com、https://...、user@example.com 等）
+  #
+  # 默认 url 规则是 "^[a-z]+[.].+$"：点号后面必须还有字符才算网址。
+  # 而按 . 时 Rime 会先把点号放进编码、再判断末尾这个「标点段」要不要顶字上屏；
+  # 此刻编码是 "twitter."（点号后暂无字符），匹配不上网址，点号就被当作
+  # 标点段并自动上屏「。」（luna_pinyin 的 half_shape 里 '.' 是 {commit: 。}）。
+  #
+  # 把结尾的 ".+" 放宽为 ".*" 后，"twitter." 一出现就整段被 url 规则接管，
+  # 不存在末尾标点段，句号不再自动上屏；继续输入字母会保持原样，
+  # 最后按空格/回车整串上屏。
+  #
+  # 代价：中文句子还没上屏时按 . 也会进入网址状态（Rime 默认行为也是如此）。
+  # 要打「。」，先用空格把上一句选上屏，再按 .；或者把下面这行换回默认规则
+  # （代价是 twitter.com 又会变成「台湾。」）。
+  recognizer/patterns/url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].*$"
+
   # 修正标点：# 在 luna_pinyin_simp（经 symbols.yaml 导入）的 half_shape 里被映射成
   # 候选列表 ['#', №]，导致连续输入 ## 时第二个 # 会把候选切换到 № 再上屏。
   # 改为直接输出原样字符，保证 ##、###、#### 等 markdown 标题标记原样输出。

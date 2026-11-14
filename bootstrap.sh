@@ -167,7 +167,7 @@ install_packages_ubuntu() {
         tig \
         zsh
 
-    sudo snap install neovim --classic
+    # sudo snap install neovim --classic
 
     info "Ubuntu packages installed"
 }
