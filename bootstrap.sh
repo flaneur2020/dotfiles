@@ -166,9 +166,14 @@ bootstrap_herdr() {
     # Create herdr-app config directory
     mkdir -p "$HOME/.config/herdr-app"
 
-    # Link keybindings
-    ln -sf "${DOTFILES_DIR}/herdr/keys.json" "$HOME/.config/herdr-app/keys.json"
-    info "Linked: herdr/keys.json -> ~/.config/herdr-app/keys.json"
+    # Keybindings: cmd-* (Super) on macOS, ctrl/alt on Linux, so one file per OS
+    local keys_src="keys.json"
+    if [[ "$(uname -s)" != "Darwin" ]]; then
+        keys_src="keys.linux.json"
+    fi
+
+    ln -sfn "${DOTFILES_DIR}/herdr/${keys_src}" "$HOME/.config/herdr-app/keys.json"
+    info "Linked: herdr/${keys_src} -> ~/.config/herdr-app/keys.json"
 }
 
 bootstrap_zsh() {
