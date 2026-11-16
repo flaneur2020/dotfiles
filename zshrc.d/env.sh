@@ -15,8 +15,11 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 
 # Go
 export GOPATH=$HOME/go
-export GOROOT=/opt/homebrew/opt/go/libexec
-export GOROOT_BOOTSTRAP=$GOROOT
+# GOROOT 按平台区分：macOS 走 Homebrew，Linux 走系统 Go（自动探测 /usr/lib/go）
+if [[ "$OSTYPE" == darwin* ]]; then
+  export GOROOT=/opt/homebrew/opt/go/libexec
+  export GOROOT_BOOTSTRAP=$GOROOT
+fi
 export GOPROXY=https://goproxy.cn,direct
 export GOPRIVATE=*.siliconflow.com,github.com/siliconflow/*
 export PATH=$GOPATH/bin:$GOROOT/bin:/opt/homebrew/bin:$PATH
