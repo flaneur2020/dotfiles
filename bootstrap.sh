@@ -167,9 +167,9 @@ bootstrap_herdr() {
     mkdir -p "$HOME/.config/herdr-app"
 
     # Keybindings: cmd-* (Super) on macOS, ctrl/alt on Linux, so one file per OS
-    local keys_src="keys.json"
-    if [[ "$(uname -s)" != "Darwin" ]]; then
-        keys_src="keys.linux.json"
+    local keys_src="keys.linux.json"
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        keys_src="keys.darwin.json"
     fi
 
     ln -sfn "${DOTFILES_DIR}/herdr/${keys_src}" "$HOME/.config/herdr-app/keys.json"

@@ -27,4 +27,4 @@ This will:
 - `gitconfig` → `~/.gitconfig`
 - `gitignore` → `~/.gitignore`
 - `rime/` → `~/Library/Rime` (macOS Squirrel) or `~/.local/share/fcitx5/rime` (Linux fcitx5). `squirrel.custom.yaml` is macOS-only.
-- `herdr/keys.json` (macOS, `cmd-*`) or `herdr/keys.linux.json` (`cmd` → `alt`) → `~/.config/herdr-app/keys.json`, picked by OS. `ctrl-alt-*` stands in for macOS `cmd-alt-*`.
+- `herdr/keys.darwin.json` (macOS, `cmd-*`) or `herdr/keys.linux.json` (`cmd` → `alt`) → `~/.config/herdr-app/keys.json`, picked by OS. `ctrl-alt-*` stands in for macOS `cmd-alt-*`.
