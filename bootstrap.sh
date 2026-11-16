@@ -9,6 +9,9 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
+# Options (set by command-line arguments)
+SKIP_INSTALL_PACKAGES=false
+
 # ============================================================================
 # Utility Functions
 # ============================================================================
@@ -19,6 +22,34 @@ info() {
 
 warn() {
     echo -e "${YELLOW}Warning:${NC} $1"
+}
+
+usage() {
+    echo "Usage: $(basename "$0") [options]"
+    echo
+    echo "Options:"
+    echo "  --skip-install-packages  Skip apt/brew package installation"
+    echo "  -h, --help               Show this help message"
+}
+
+parse_args() {
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --skip-install-packages)
+                SKIP_INSTALL_PACKAGES=true
+                ;;
+            -h|--help)
+                usage
+                exit 0
+                ;;
+            *)
+                echo "Unknown option: $1" >&2
+                usage >&2
+                exit 1
+                ;;
+        esac
+        shift
+    done
 }
 
 # ============================================================================
@@ -236,10 +267,16 @@ install_packages() {
 # ============================================================================
 
 main() {
+    parse_args "$@"
+
     info "Starting dotfiles bootstrap..."
 
     # OS-specific package installation
-    install_packages
+    if $SKIP_INSTALL_PACKAGES; then
+        warn "Skipping package installation (--skip-install-packages)"
+    else
+        install_packages
+    fi
 
     # Core setup
     link_dotfiles
@@ -256,4 +293,4 @@ main() {
 }
 
 # Run main function
-main
+main "$@"
