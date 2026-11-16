@@ -50,6 +50,11 @@ patch:
   # - 正解：用 /+ 后缀把 value 合并进 punctuator（而非整体覆盖），
   #   value 里的 '#' 作为 mapping 子 key 按 YAML 规则解析为标点字符，
   #   以字符串 '#' 整体覆盖原的 ['#', №]。
+  # 小写字母+连字符组成的串（如 kube-ops、kube-ops-prod、my-app-2），
+  # 被 recognizer 打上 hyphen_ascii 标签，由 lua translator 原样上屏，
+  # 避免前缀部分（如 kube）被当作拼音转换成中文。
+  "recognizer/patterns/hyphen_ascii": "^([a-z]+-)+[a-z0-9]*$"
+
   punctuator/+:
     half_shape:
       '#': '#'

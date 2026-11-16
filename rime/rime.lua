@@ -7,6 +7,15 @@
 -- 在 schema 里用 lua_translator@mixed_case_translator 挂载。
 
 function mixed_case_translator(input, seg, env)
+  # 第二个功能：小写字母+连字符的串（kube-ops、my-app-2 等），
+  # 被 recognizer 的 hyphen_ascii pattern 接管，原样上屏不做拼音转换。
+  if seg:has_tag("hyphen_ascii") then
+    local c = Candidate("hyphen", seg.start, seg._end, input, "原样")
+    c.quality = 10
+    yield(c)
+    return
+  end
+
   -- 仅处理被 recognizer 标记为 uppercase 的段
   if not seg:has_tag("uppercase") then
     return
