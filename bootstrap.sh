@@ -129,6 +129,17 @@ bootstrap_rime() {
     fi
 }
 
+bootstrap_herdr() {
+    info "Bootstrapping herdr..."
+
+    # Create herdr-app config directory
+    mkdir -p "$HOME/.config/herdr-app"
+
+    # Link keybindings
+    ln -sf "${DOTFILES_DIR}/herdr/keys.json" "$HOME/.config/herdr-app/keys.json"
+    info "Linked: herdr/keys.json -> ~/.config/herdr-app/keys.json"
+}
+
 bootstrap_zsh() {
     info "Bootstrapping zsh with oh-my-zsh..."
 
@@ -238,6 +249,7 @@ main() {
     bootstrap_ghostty
     bootstrap_zed
     bootstrap_rime
+    bootstrap_herdr
     bootstrap_zsh
 
     info "Bootstrap completed!"
